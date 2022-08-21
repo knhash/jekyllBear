@@ -22,4 +22,3 @@ This is a port of it's theme to Jekyll, with some tweaks. So you can use GitHub 
 - Code highlighting
 
 Have a look around, this website is already themed with **jekyllBear**. If you like it, head over to the GitHub [repository](https://github.com/knhash/jekyllBear) for installation instructions.
-
