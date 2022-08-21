@@ -19,10 +19,10 @@ This is a port of it's theme to Jekyll, with some tweaks. So you can use GitHub 
 
 ## Screenshots
 
-![Home](https://raw.githubusercontent.com/Knhash/jekyllBear/master/assets/files/JBHome.pdf?raw=true "Home") 
-![Blog](https://raw.githubusercontent.com/Knhash/jekyllBear/master/assets/files/JBBlog.pdf?raw=true "Blog") 
-![LongForm](https://raw.githubusercontent.com/Knhash/jekyllBear/master/assets/files/JBLongForm.pdf?raw=true "LongForm") 
-![Poetry](https://raw.githubusercontent.com/Knhash/jekyllBear/master/assets/files/JBPoetry.pdf?raw=true "Poetry") 
+![Home](https://raw.githubusercontent.com/Knhash/jekyllBear/master/assets/images/JBHome.png?raw=true "Home") 
+![Blog](https://raw.githubusercontent.com/Knhash/jekyllBear/master/assets/images/JBBlog.png?raw=true "Blog") 
+![LongForm](https://raw.githubusercontent.com/Knhash/jekyllBear/master/images/files/JBLongForm.png?raw=true "LongForm") 
+![Poetry](https://raw.githubusercontent.com/Knhash/jekyllBear/master/images/files/JBPoetry.png?raw=true "Poetry") 
 
 
 ## Installation
