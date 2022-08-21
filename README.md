@@ -23,13 +23,13 @@ This is a port of it's theme to Jekyll, with some tweaks. So you can use GitHub 
 Add this line to your Jekyll site's `Gemfile`:
 
 ```ruby
-gem "jekyllBear"
+gem "jekyll-bear-theme"
 ```
 
 And add this line to your Jekyll site's `_config.yml`:
 
 ```yaml
-theme: jekyllBear
+theme: jekyll-bear-theme
 ```
 
 And then execute:
@@ -38,7 +38,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install jekyllBear
+    $ gem install jekyll-bear-theme
 
 ## Usage
 
