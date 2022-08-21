@@ -3,7 +3,8 @@
 
 title: jekyllBear
 description: a minimal, text focused blog theme
-url: "https://knhash.in/jekyllBear"
+url: "https://knhash.in/"
+baseurl: "jekyllBear" # the subpath of your site, e.g. /blog
 host: 0.0.0.0
 
 
