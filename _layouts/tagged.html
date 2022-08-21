@@ -1,0 +1,48 @@
+---
+layout: compress
+---
+
+{% include head.html %}
+
+<main>
+
+    {% include header.html %}
+
+    {{ content }}
+
+    {% if site.tags[page.slug] %}
+    <p>
+        Here be writings, tagged as <b>"{{ page.slug }}"</b>.<br>
+        <small><a href="{{ site.baseurl }}{{ site.Blog }}">Remove filter</a></small>
+    </p>
+
+    <ul class="blog-posts">
+        {% for post in site.tags[page.slug] %}
+        {% for tag in post.tags %}
+        <li>
+            <span>
+                <i>
+                    <time datetime="2022-01-28" pubdate="">
+                        {{ post.date | date: "%b %-d, %Y" }}
+                    </time>
+                </i>
+            </span>
+            <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+        </li>
+        {% endfor %}
+        {% endfor %}
+
+    </ul>
+    {% else %}
+    <p>
+        There are no posts in {{ page.slug }}.
+    </p>
+    {% endif %}
+
+</main>
+
+{% include footer.html %}
+
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+###########
+# site.title
+
+title: jekyllBear
+description: a minimal, text focused blog theme
+url: "https://knhash.in/jekyllBear"
+host: 0.0.0.0
+
+
+#########################
+# more settings
+
+plugins:
+  - jekyll-redirect-from
+
+whitelist:
+  - jekyll-redirect-from
+
+markdown: kramdown
+
+compress_html:
+  clippings: all
+  comments: [""]
+  endings: [html, head, body, li, dt, dd, rt, rp, optgroup, option, colgroup, caption, thead, tbody, tfoot, tr, td, th]
+  profile: false
+  blanklines: false
+  ignore:
+    envs: []
+
+# sass:
+#   sass_dir: css
+#   style:    compressed
+
+collections:
+  my_tags:
+    output: true
+    permalink: /tagged/:slug/
+defaults:
+  -
+    scope:
+      path: ""
+      type: my_tags
+    values:
+      layout: tagged
+
+baseurl: ""
+permalink: /blog/:slug
+timezone: America/New_York
+future: false
+
+exclude:
+- README.md
+- LICENSE.md
+
+exclude: [vendor]
+
+Blog: /blog
+
+# Add general links to site pages here
+links:
+  Resume: /assets/resume.pdf
+  
+
+# Add links for more focus here
+special_links:
+  "Search": https://duckduckgo.com
