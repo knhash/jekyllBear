@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 Gem::Specification.new do |spec|
-  spec.name          = "jekyllBear"
-  spec.version       = "0.1.0"
+  spec.name          = "jekyll-bear-theme"
+  spec.version       = "0.1.1"
   spec.authors       = ["knhash"]
   spec.email         = ["mail@knhash.in"]
 
