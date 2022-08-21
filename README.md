@@ -17,6 +17,13 @@ This is a port of it's theme to Jekyll, with some tweaks. So you can use GitHub 
 - Gallery view for your images
 - Code highlighting
 
+## Screenshots
+
+![Home](https://raw.githubusercontent.com/Knhash/jekyllBear/master/assets/files/JBHome.pdf?raw=true "Home") 
+![Blog](https://raw.githubusercontent.com/Knhash/jekyllBear/master/assets/files/JBBlog.pdf?raw=true "Blog") 
+![LongForm](https://raw.githubusercontent.com/Knhash/jekyllBear/master/assets/files/JBLongForm.pdf?raw=true "LongForm") 
+![Poetry](https://raw.githubusercontent.com/Knhash/jekyllBear/master/assets/files/JBPoetry.pdf?raw=true "Poetry") 
+
 
 ## Installation
 
