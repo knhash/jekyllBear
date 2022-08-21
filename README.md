@@ -23,13 +23,13 @@ This is a port of it's theme to Jekyll, with some tweaks. So you can use GitHub 
 Add this line to your Jekyll site's `Gemfile`:
 
 ```ruby
-gem "jekyllBear"
+gem "jekyll-bear-theme"
 ```
 
 And add this line to your Jekyll site's `_config.yml`:
 
 ```yaml
-theme: jekyllBear
+theme: jekyll-bear-theme
 ```
 
 And then execute:
@@ -38,15 +38,50 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install jekyllBear
+    $ gem install jekyll-bear-theme
 
 ## Usage
 
-TODO: Write usage instructions here. Describe your available layouts, includes, sass and/or assets.
+Create a new repository for your website (if necessary)
+```jekyll
+jekyll new my_website
+```
+
+Copy over the following content from this repository, to serve as a base setup
+
+```
+/posts      -> Where you will write your posts
+/_my_tags   -> Where you will define your tags, if you need to add anything new
+blog.md     -> Homepage for your blog
+index.md    -> Website homepage
+404.html    -> When a page is not available
+```
+
+You will need to update `_config.yml`. Copy over the lines after
+
+```
+#########################
+# more settings
+```
+in the `_config.yml` present in this repository to your website repository `_config.yml`.
+
+Any new links you want to add to the navbar goes here, towards the end.
+This also defines the bits about tags and filtering.
+
+There should be 3 kinds of blog posts in the posts folder, an example of each type you can use:
+
+- long-form reading
+- poetry
+- gallery view
+
+Use them as templates for your front matter.
+
+>To test your theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000`.
+
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/hello. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/knhash/jekyllBear. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## Development
 
