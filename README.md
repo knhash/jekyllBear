@@ -9,7 +9,7 @@ This is a port of it's theme to Jekyll, with some tweaks. So you can use GitHub 
 **Stop worrying about the style, focus on your writing.**
 
 - Looks great on *any* device
-- Tiny, optimized, and awesome pages
+- Tiny, optimized, and awesome pages, with [a 100 on PageSpeed Insights](https://pagespeed.web.dev/report?url=https%3A%2F%2Fknhash.in%2FjekyllBear%2F)
 - No trackers, ads, or scripts, *did I mention minimal already?*
 - Auto light and dark themes
 - Tag support, to filter blog pages
