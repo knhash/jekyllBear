@@ -38,7 +38,7 @@ b {
 a {
     color: #3273dc;
     cursor: pointer;
-    text-decoration: underline;
+    text-decoration: none;
     /*color: #ff5e6c;*/
 }
 
