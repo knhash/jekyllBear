@@ -41,6 +41,10 @@ a {
     text-decoration: none;
 }
 
+a:hover {
+    text-decoration: underline; 
+}
+
 .title {
     text-decoration: none;
     border: 0;
