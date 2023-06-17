@@ -11,8 +11,14 @@ layout: compress
     {{ content }}
 
     <ul class="blog-posts">
+        {% assign post_list = '' | split: ',' %}
         {% for post in site.posts %}
         {% for tag in post.tags %}
+        {% assign post_list = post_list | push: post %}
+        {% endfor %}
+        {% endfor %}
+        {% for post in post_list %}
+        {% unless post == previous %}
         <li>
             <span>
                 <i>
@@ -23,7 +29,8 @@ layout: compress
             </span>
             <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
         </li>
-        {% endfor %}
+        {% endunless %}
+        {% assign previous = post %}
         {% endfor %}
 
     </ul>
@@ -35,7 +42,8 @@ layout: compress
         {% assign tag_slug = tag | first %}
         {% assign no_of_posts = tag | last | size %}
 
-        <a href="{{ 'tagged/' | relative_url }}{{ tag_slug }}" title="See all posts by {{ tag_slug }} tag">#{{ tag_slug }}</a>
+        <a href="{{ 'tagged/' | relative_url }}{{ tag_slug }}" title="See all posts by {{ tag_slug }} tag">#{{ tag_slug
+            }}</a>
         {% endfor %}
     </small>
 
