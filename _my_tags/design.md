@@ -1,4 +1,4 @@
 ---
-slug: design
-name: Design
+slug: dev
+name: dev
 ---
