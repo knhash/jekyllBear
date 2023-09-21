@@ -1,24 +1,8 @@
 ---
 layout: default
-title: Hello
+title: Home
 ---
 
+### 안녕하세요 오탈개발자 입니다
 
-## An easy to use, minimal, text focused Jekyll theme
-
-[Bear Blog](https://bearblog.dev/) is *"a blogging platform where words matter most"*. 
-
-This is a port of it's theme to Jekyll, with some tweaks. So you can use GitHub Pages to host your blog while getting the same awesome Bear Blog feels.
-
-**Stop worrying about the style, focus on your writing.**
-
-- Looks great on *any* device
-- Tiny, optimized, and awesome pages
-- No trackers, ads, or scripts, *did I mention minimal already?*
-- Auto light and dark themes
-- Tag support, to filter blog pages
-- Quick, *15 minute* setup
-- Gallery view for your images
-- Code highlighting
-
-Have a look around, this website is already themed with **jekyllBear**. If you like it, head over to the GitHub [repository](https://github.com/knhash/jekyllBear) for installation instructions.
+그동안 힘든 일을 참 많이도 겪었습니다. 그럼에도 희망을 잃지 않고 프로그램을 쓰는 일을 게을리하지 않고 있습니다. 지켜봐 주신 가족에 감사하고, 다행이라고 생각합니다. 앞으로도 어쩔 수 없는 일들이 많이 펼쳐지겠지만, 그럼에도 꿈을 잃지 않고 노력하려고 합니다.
