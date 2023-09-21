@@ -5,4 +5,4 @@ description: Here be writings
 permalink: /blog
 ---
 
-Here be writings. Mostly mundane, sometimes fanciful.
+Life Doesn't Have to Be Perfect to Be Wonderful.
