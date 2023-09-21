@@ -3,7 +3,7 @@
 
 title: 오탈개발자의 수기
 description: Life Doesn't Have to Be Perfect to Be Wonderful
-baseurl: "/" # the subpath of your site, e.g. /blog/
+# baseurl: "/" # the subpath of your site, e.g. /blog/
 url: "https://barexamloser.github.io" # the base hostname & protocol for your site
 # host: 0.0.0.0
 
