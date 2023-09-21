@@ -1,4 +1,0 @@
----
-slug: poem
-name: Poem
----

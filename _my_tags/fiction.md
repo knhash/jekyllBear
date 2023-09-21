@@ -1,4 +1,0 @@
----
-slug: fiction
-name: Fiction
----
