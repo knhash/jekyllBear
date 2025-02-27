@@ -1,27 +1,50 @@
+
+      
+      
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --width: 900px;
+    --font-main: 'Fira Code', monospace;
+    --font-secondary: 'Fira Code', monospace;
+    --font-scale: .95em;
+    --background-color: #F8F1E5; /* Lighter cream */
+    --heading-color: #2C1E15; /* Darker roast coffee */
+    --text-color: #1F1408; /* Darker espresso */
+    --link-color: #7C4011; /* Darker caramel */
+    --visited-color: #5E3211; /* Darker roasted coffee beans */
+    --main-color: #96572D; /* Darker café au lait */
+    --code-background-color: #E6D7C3; /* Coffee stained paper */
+    --code-color: #2C1E15; /* Darker roast coffee */
+    --blockquote-color: #B99B6B; /* Darker café latte foam */
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #1A1310; /* Darker espresso */
+        --heading-color: #F0DFC0; /* Lighter café latte foam */
+        --text-color: #F0E6D2; /* Lighter coffee stained paper */
+        --link-color: #E5A254; /* Lighter caramel drizzle */
+        --visited-color: #C49B76; /* Lighter roasted coffee beans */
+        --main-color: #B89470; /* Lighter mocha */
+        --code-background-color: #2C2117; /* Dark chocolate coffee */
+        --code-color: #F0DFC0; /* Lighter café latte foam */
+        --blockquote-color: #6E563D; /* Lighter coffee grounds */
+    }
+}
+
 body {
-    font-family: Verdana, sans-serif;
+    font-family: var(--font-secondary);
+    font-size: var(--font-scale);
     margin: auto;
     padding: 20px;
-    max-width: 720px;
+    max-width: var(--width);
     text-align: left;
-    background-color: #fff;
+    background-color: var(--background-color);
     word-wrap: break-word;
     overflow-wrap: break-word;
     line-height: 1.5;
-    color: #444;
-}
-
-/* Hide scrollbar for Chrome, Safari and Opera */
-html::-webkit-scrollbar {
-    display: none;
-}
-
-/* Hide scrollbar for IE, Edge and Firefox */
-html {
-    -ms-overflow-style: none;
-    /* IE and Edge */
-    scrollbar-width: none;
-    /* Firefox */
+    color: var(--text-color);
 }
 
 h1,
@@ -29,102 +52,46 @@ h2,
 h3,
 h4,
 h5,
-h6,
-strong,
-b {
-    color: #222;
+h6 {
+    font-family: var(--font-main);
+    color: var(--heading-color);
 }
 
 a {
-    color: #3273dc;
+    color: var(--link-color);
+    font-family: var(--font-main);
     cursor: pointer;
     text-decoration: none;
+    border-bottom: 3px solid var(--main-color);
 }
 
 a:hover {
-    text-decoration: underline; 
-}
-
-.title {
+    background-color: var(--main-color);
+    color: white;
     text-decoration: none;
-    border: 0;
 }
 
-.title h1 {
-    font-size: 1.5em;
-}
-
-.title span {
-    font-weight: 400;
-}
-
-.bear::before {
-    content: "ᕦʕ •ᴥ•ʔᕤ";
-    font-weight: 400;
-}
-
-.bear:hover::before {
-    content: "ᕙʕ ಠᴥಠʔᕗ";
-    font-weight: 400;
+header {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 3px dotted #232333;
 }
 
 nav a {
-    margin-right: 10px;
+    margin-right: 8px;
 }
 
-textarea,
-input:not([type="submit"]) {
-    background-color: inherit;
-    color: inherit;
-    border: 1px dashed;
-    padding: 5px;
-    font-size: 16px;
+strong,
+b {
+    color: var(--heading-color);
 }
 
-.full-width textarea,
-.full-width input:not([type="submit"], [type="checkbox"], [type="radio"]) {
-    width: calc(100% - 15px);
+button {
+    margin: 0;
+    cursor: pointer;
 }
 
-.nav-image {
-    height: 3.14rem;
-    border-radius: 12.5%;
-}
-
-textarea:required,
-input:required:not([type="submit"]) {
-    border: 1px solid;
-}
-
-textarea.full-screen {
-    position: fixed;
-    background-color: white;
-    top: -2px;
-    bottom: -2px;
-    left: 0;
-    width: calc(100vw - 30px);
-    max-width: 720px;
-    border: 10px solid;
-    border-width: 10px calc(50vw - 370px);
-}
-
-@media only screen and (max-width: 750px) {
-    textarea.full-screen {
-        border-width: 10px;
-    }
-}
-
-button.floating {
-    position: fixed;
-    bottom: 20px;
-    right: 25px;
-}
-
-button#toggle-full-screen {
-    float: right;
-}
-
-content {
+main {
     line-height: 1.6;
 }
 
@@ -133,6 +100,7 @@ table {
 }
 
 hr {
+    border: 0;
     border-top: 1px dashed;
 }
 
@@ -143,91 +111,57 @@ img {
 code {
     font-family: monospace;
     padding: 2px;
-    background-color: #f2f2f2;
-    color: #222;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
     border-radius: 3px;
+}
+
+blockquote {
+    border-left: 1px solid #999;
+    color: var(--code-color);
+    padding-left: 20px;
+    font-style: italic;
+}
+
+header {
+  border-bottom: 3px dotted var(--main-color);
+}
+
+footer {
+    margin-top: 40px;
+    border-top: 3px dotted var(--main-color);
+    padding: 25px 0;
+    text-align: center;
+}
+
+footer > span:has(a[href="https://bearblog.dev"]) {
+    display: none;
+}
+
+.title:hover {
+    text-decoration: none;
+}
+
+.title h1 {
+    font-size: 1.5em;
+}
+
+.inline {
+    width: auto !important;
 }
 
 .highlight,
 .code {
     padding: 1px 15px;
-    background-color: #f2f2f2;
-    color: #222;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
     border-radius: 3px;
     margin-block-start: 1em;
     margin-block-end: 1em;
-    overflow:auto;
+    overflow-x: auto;
 }
 
-blockquote {
-    border-left: 1px solid #999;
-    color: #222;
-    padding-left: 20px;
-    font-style: italic;
-}
-
-footer {
-    padding: 25px 0;
-    text-align: left;
-}
-
-.helptext {
-    color: #777;
-    font-size: small;
-}
-
-.errorlist {
-    color: #eba613;
-    font-size: small;
-}
-
-#id_favicon {
-    width: 20px;
-    text-align: center;
-}
-
-#date-range,
-#initial-values,
-#import-contacts {
-    display: none;
-}
-
-#date-range:target,
-#initial-values:target,
-#import-contacts:target {
-    display: block;
-}
-
-/* dashboard post list and analytics */
-ul.post-list {
-    list-style-type: none;
-    padding: unset;
-}
-
-ul.post-list li {
-    display: flex;
-    padding: 10px 0;
-    border-bottom: 1px dashed;
-}
-
-ul.post-list li span {
-    flex: 0 0 130px;
-}
-
-ul.post-list li span.number {
-    flex: 0 0 50px;
-}
-
-ul.post-list li a {
-    flex: max-content;
-}
-
-ul.post-list li small {
-    text-align: right;
-    flex: 0 0 115px;
-}
-
-/* blog posts */
+/* blog post list */
 ul.blog-posts {
     list-style-type: none;
     padding: unset;
@@ -235,115 +169,81 @@ ul.blog-posts {
 
 ul.blog-posts li {
     display: flex;
+    margin-bottom: 10px;
+}
+
+i time {
+    font-style: normal;
+    opacity: 0.7;
 }
 
 ul.blog-posts li span {
     flex: 0 0 130px;
 }
 
+
 ul.blog-posts li a:visited {
-    color: #8b6fcb;
+    color: var(--visited-color);
 }
 
-/* discovery feed */
-ul.discover-posts {
-    list-style-type: none;
-    padding: unset;
+table {
+    border-spacing: 0;
 }
 
-ul.discover-posts li {
-    display: flex;
-    line-height: 1.2;
+th,
+td {
+    padding: 6px 13px;
+    font-size: 1em;
 }
 
-ul.discover-posts li span {
-    flex: 0 0 40px;
+/* external link marker */
+a[href^="http"]:where(:not([href*="knhash.in/"])):not(:has(img))::after {
+    content: "↗"
 }
 
-ul.discover-posts li a:visited {
-    color: #8b6fcb;
+/* Form elements */
+input, button, textarea, select {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font: inherit;
 }
-
-ul.discover-posts li div {
-    padding-bottom: 8px;
+legend {
+  margin: 20px 0;
+  font-weight: bold;
 }
-
-ul.discover-posts li small {
-    color: #777 !important;
+label {
+  display: block;
+  font-weight: bold;
 }
-
-ul.discover-posts li small a {
-    color: #777 !important;
+input,
+textarea {
+  margin: 0 0 10px;
+  padding: 5px 10px;
+  color: var(--text-color);
+  background: var(--accent-color);
+  border: 2px solid var(--link-color);
+  border-radius: 5px;
 }
-
-
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: #01242e;
-        color: #ddd;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    strong,
-    b {
-        color: #eee;
-    }
-
-    a {
-        color: #8cc2dd;
-    }
-
-    code {
-        background-color: #777;
-    }
-
-    pre code {
-        color: #ddd;
-    }
-
-    blockquote {
-        color: #ccc;
-    }
-
-    .helptext {
-        color: #aaa;
-    }
+input {
+  width: 55%;
 }
-
-
-
-ul.blog-posts {
-    padding-bottom: 0.61803rem;
+textarea {
+  width: 95%;
 }
-
-ul.blog-posts li {
-    padding-top: 0.61803rem;
+input[type=button], input[type=submit], input[type=reset] {
+  margin: 0 0 20px;
+  padding: 7px;
+  font-family: var(--font-secondary);
+  font-weight: bold;
+  color: var(--background-color);
+  background: var(--link-color);
+  border-radius: 5px;
+  cursor: pointer;
 }
-
-small a {
-    padding-right: 0.61803rem;
+::placeholder {
+  color: var(--text-color);
+  opacity: 0.7;
 }
-
-hr {
-    border: 1.61803px solid;
-}
-
-body:hover {
-    border-image: ;
-    border-width: 0;
-}
-
-
-small a {
-    padding-right: 0.61803rem;
-}
-
-.bottom-footer {
-    padding: 50px;
-    text-align: center;
-}
+      
+  
