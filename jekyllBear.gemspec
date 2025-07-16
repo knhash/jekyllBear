@@ -2,18 +2,26 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "jekyll-bear-theme"
-  spec.version       = "0.1.7"
+  spec.version       = "0.2.0"
   spec.authors       = ["knhash"]
   spec.email         = ["mail@knhash.in"]
 
   spec.summary       = "A minimal, text focused blog theme inspired by Bear Blog"
+  spec.description   = "jekyllBear is a clean, minimal Jekyll theme focused on readability and simplicity. Features include a responsive design, tag system, life tracking, and a distraction-free reading experience inspired by Bear Blog."
   spec.homepage      = "https://knhash.in/jekyllBear"
   spec.license       = "MIT"
 
-  spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r!^(assets|_layouts|_includes|_sass|LICENSE|README|_config\.yml)!i) }
+  spec.metadata["homepage_uri"] = spec.homepage
+  spec.metadata["source_code_uri"] = "https://github.com/knhash/jekyllBear"
+  spec.metadata["changelog_uri"] = "https://github.com/knhash/jekyllBear/blob/master/README.md"
+  spec.metadata["bug_tracker_uri"] = "https://github.com/knhash/jekyllBear/issues"
+
+  spec.required_ruby_version = ">= 2.7.0"
+
+  spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r!^(assets|_layouts|_includes|_sass|_data|LICENSE|README|_config\.yml)!i) }
 
   spec.add_runtime_dependency "jekyll", "~> 4.4"
-  spec.add_runtime_dependency "webrick", "~> 1.9.1"
-  spec.add_runtime_dependency "jekyll-redirect-from", "~> 0.16.0"
-  spec.add_runtime_dependency "logger", "~> 1.6"
+  spec.add_runtime_dependency "webrick", "~> 1.9"
+  spec.add_runtime_dependency "jekyll-redirect-from", "~> 0.16"
+  spec.add_runtime_dependency "logger", "~> 1.7"
 end
