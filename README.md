@@ -16,6 +16,7 @@ This is a port of it's theme to Jekyll, with some tweaks. So you can use GitHub 
 - Quick, *15 minute* setup
 - Gallery view for your images
 - Code highlighting
+- **Life in Weeks visualization** - Interactive timeline of your life events
 
 ## Screenshots
 
@@ -29,8 +30,10 @@ This is a port of it's theme to Jekyll, with some tweaks. So you can use GitHub 
 ![LongForm](https://raw.githubusercontent.com/Knhash/jekyllBear/master/assets/images/JBLongForm.png?raw=true "LongForm") 
 
 ### Poetry
-![Poetry](https://raw.githubusercontent.com/Knhash/jekyllBear/master/assets/images/JBPoetry.png?raw=true "Poetry") 
+![Poetry](https://raw.githubusercontent.com/Knhash/jekyllBear/master/assets/images/JBPoetry.png?raw=true "Poetry")
 
+### Life
+![Life](https://raw.githubusercontent.com/Knhash/jekyllBear/master/assets/images/JBLife.png?raw=true "Life")
 
 ## Installation
 
@@ -56,6 +59,8 @@ Or install it yourself as:
 
 ## Usage
 
+### Basic Setup
+
 Create a new repository for your website (if necessary)
 ```jekyll
 jekyll new my_website
@@ -68,6 +73,7 @@ Copy over the following content from this repository, to serve as a base setup
 /_my_tags   -> Where you will define your tags, if you need to add anything new
 blog.md     -> Homepage for your blog
 index.md    -> Website homepage
+life.md     -> Life in weeks visualization page (optional)
 404.html    -> When a page is not available
 ```
 
@@ -81,6 +87,29 @@ in the `_config.yml` present in this repository to your website repository `_con
 
 Any new links you want to add to the navbar goes here, towards the end.
 This also defines the bits about tags and filtering.
+
+### Life in Weeks Feature
+
+To use the new Life in Weeks visualization:
+
+1. **Create your life data**: Copy `_data/life-in-weeks.yml` and customize it with your own life events
+2. **Add the life page**: Copy `life.md` and update the `start_date` and `end_year` parameters
+3. **Configure navigation**: The "Life" link will automatically appear in your navigation
+
+#### Life Data Format
+
+Events in `_data/life-in-weeks.yml` follow this structure:
+
+```yaml
+'YYYY-MM-DD':
+  - name: "Event name"
+    desc: "Optional description shown in tooltip"
+    category: "category_name"
+    link: "https://optional-link.com"
+    tags: ["tag1", "tag2"]
+```
+
+### Blog Post Types
 
 There should be 3 kinds of blog posts in the posts folder, an example of each type you can use:
 

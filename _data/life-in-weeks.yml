@@ -1,0 +1,498 @@
+'1976-05-28': 
+  - name: "I enter the world"
+    desc: "Born at Hoag Hospital in Newport Beach California. 1976 was the year of the Dragon, Play That Funky Music and Rocky were top of the charts, and Gerald Ford was president. I'm a gemini, which of course doesn't mean anything. My mom collected bicentennial quarters to commemorate my birth year, since it was also the 200th birthday of America."
+    category: "self"
+
+'1978-10-29':
+  - name: "My sister, Kristy, is born"
+    category: "family"
+    tags: ['kristy']
+
+'1982-08-25':
+  - name: "I start at Glenmeade Elementary"
+    category: "school"
+
+
+'1984-08-01':
+  - name: "We move to Irvine"
+    category: "family"
+
+'1984-09-02':
+  - name: "I transfer to Stonecreek Elementary for 3rd grade"
+    category: "school"
+
+'1988-09-10':
+  - name: "I start 7th grade at Lakeside Middle"
+    category: "school"
+
+'1990-09-02':
+  - name: "I start at Woodbridge High School"
+    category: "school"
+
+'1993-10-30':
+  - name: "💔 My father passes away"
+    desc: "From complications with treatment for lung cancer."
+    category: "family"
+    tags: ["dad"]
+
+'1994-05-15':
+  - name: "I graduate from Woodbridge High School"
+    category: "school"
+
+'1994-08-07':
+  - name: "🚚 I move to Berkeley, California"
+    category: "self"
+
+'1995-08-01':
+  - name: "🚚 I move to Seattle, Washington"
+    category: "self"
+
+'1994-08-19':
+  - name: "First day of college at UC Berkeley"
+    category: "school"
+
+'1995-09-25':
+  - name: "First day at UW, starting the sophomore year"
+    desc: "Switching from genetic biology to creative writing!"
+    category: "school"
+
+'1998-06-13':
+  - name: "I graduate from UW with a degree in creative writing"
+    category: "school"
+
+'1998-11-02':
+  - name: "My first day at Amazon, doing night shift customer service"
+    category: "work"
+    tags: ["technology"]
+
+'1999-10-03':
+  - name: "I write my first blog post on Live Journal"
+    category: "writing"
+
+'2000-01-01':
+  - name: "Y2K"
+    desc: "The world doesn't end. Wee!"
+    category: "world"
+    tags: ["technology"]
+
+'2000-05-23':
+  - name: "I become a 'web developer' and learn to code on the job"
+    category: "work"
+    tags: ["technology"]
+
+'2000-06-17':
+  - name: "Kharis and I get married"
+    category: "relationships"
+    tags: ["kharis"]
+
+'2001-09-11':
+  - name: "September 11th"
+    category: "world"
+    tags: ["politics"]
+
+'2002-11-30':
+  - name: "I complete my first National Novel Writing Month challenge"
+    category: "writing"
+    tags: ["man versus himself"]
+
+'2003-03-20':
+  - name: "The Iraq War starts"
+    category: "world"
+    tags: ["politics"]
+
+'2003-08-05':
+  - name: "I self-publish my NaNoWriMo novel, Man Versus Himself"
+    category: "writing"
+    link: "https://amzn.to/2GJ8ASw"
+    tags: ["man versus himself"]
+
+'2004-09-13':
+  - name: "Kharis and I officially divorced"
+    desc: "Separated in February 2004."
+    category: "relationships"
+    tags: ["kharis"]
+
+'2004-09-01':
+  - name: "The Robot Co-op is founded"
+    category: "work"
+    tags: ["robot co-op"]
+
+'2004-11-01':
+  - name: "I buy my first place: a condo in Belltown"
+    category: "self"
+    tags: ["self", "home"]
+
+'2005-01-01':
+  - name: "43things.com launches"
+    category: "work"
+    tags: ["robot co-op"]
+
+'2006-05-28':
+  - name: "🎂 I turn 30: Higher highs and lower lows"
+    category: "birthday"
+    link: "https://busterbenson.com/2006/05/31/higher-highs-lower-lows"
+    tags: ["annual review"]
+
+'2006-09-06':
+  - name: "I legally change my name to Buster Butterfiled McLeod"
+    category: "self"
+
+'2006-12-31':
+  - name: "McLeod Residence's New Year's Eve opening party"
+    category: "work"
+    tags: ["mcleod residence"]
+
+  - name: "I meet Kellianne"
+    category: "relationships"
+    tags: ["kellianne"]
+
+'2007-05-28':
+  - name: "🎂 I turn 31: Double down"
+    category: "birthday"
+    link: "https://busterbenson.com/2007/05/29/double-down"
+    tags: ["annual review"]
+
+'2007-06-29':
+  - name: "The first iPhone is released"
+    category: "world"
+    tags: ["technology"]
+
+'2008-05-28':
+  - name: "🎂 I turn 32: No problem"
+    category: "birthday"
+    link: "https://busterbenson.com/2008/05/27/no-problem"
+    tags: ["annual review"]
+
+'2008-09-15':
+  - name: "Financial crisis caused by subprime meltdown"
+    category: "world"
+    tags: ["politics"]
+
+'2008-10-04':
+  - name: "Kellianne and I get married"
+    category: "relationships"
+    tags: ["kellianne"]
+
+'2008-10-31':
+  - name: "McLeod Residence's last day in business"
+    category: "work"
+    tags: ["mcleod residence"]
+
+'2008-11-04':
+  - name: "Obama wins the election."
+    category: "world"
+    tags: ["politics"]
+
+'2009-03-17':
+  - name: "Locavore, my farmer's market iPhone app, launches"
+    category: "work"
+    tags: ["locavore"]
+
+'2009-05-28':
+  - name: "🎂 I turn 33: Frugal to the max"
+    category: "birthday"
+    link: "https://busterbenson.com/2009/05/28/frugal-to-the-max"
+    tags: ["annual review"]
+
+'2009-12-16':
+  - name: "750words.com launches"
+    category: "work"
+    link: "/pile/750-words"
+    tags: ["750 words"]
+
+'2010-05-10':
+  - name: "❤️ Niko is born"
+    category: "family"
+    tags: ["niko"]
+
+'2010-05-28':
+  - name: "🎂 I turn 34: Cultivating the core"
+    category: "birthday"
+    link: "https://busterbenson.com/2010/05/28/cultivate-the-core"
+    tags: ["annual review"]
+
+'2010-09-01':
+  - name: "Health Month launches"
+    category: "work"
+    tags: ["health month"]
+
+'2011-05-28':
+  - name: "🎂 I turn 35: Love the struggle"
+    category: "birthday"
+    link: "https://busterbenson.com/2011/05/28/love-the-struggle"
+    tags: ["annual review"]
+
+'2011-07-01':
+  - name: "Habit Labs is founded"
+    category: "work"
+    tags: ["habit labs"]
+
+'2012-03-13':
+  - name: "Habit Labs launches Budge"
+    category: "work"
+    tags: ["habit labs", "bud.ge"]
+
+'2012-05-28':
+  - name: "🎂 I turn 36: Talk it out"
+    category: "birthday"
+    link: "https://busterbenson.com/2012/05/28/talk-it-out"
+    tags: ["annual review"]
+
+'2012-07-11':
+  - name: "Habit Labs closes down"
+    category: "work"
+    tags: ["habit labs"]
+
+'2012-08-22':
+  - name: "I publish the first version of my book of beliefs"
+    category: "self"
+    tags: ["beliefs"]
+
+'2012-09-21':
+  - name: "My first day at Twitter"
+    category: "work"
+    tags: ["twitter"]
+
+'2013-01-04':
+  - name: "🚚 Kellianne, Niko, and I move to Berkeley, California"
+    category: "relationships"
+    tags: ["kellianne", "home"]
+
+'2013-05-28':
+  - name: "🎂 I turn 37: More kiloslogs"
+    category: "birthday"
+    link: "https://busterbenson.com/2013/05/28/more-kiloslogs"
+    tags: ["annual review"]
+
+'2013-12-23':
+  - name: "I sell my Belltown condo in Seattle"
+    category: "self"
+
+'2014-05-09':
+  - name: "❤️ I meet Rodney, my brother. We found each other through 23andme.com"
+    category: "family"
+    tags: ["rodney"]
+
+'2014-05-28':
+  - name: "🎂 I turn 38: Cultivate quality time"
+    category: "birthday"
+    link: "https://busterbenson.com/2014/05/28/cultivate-quality-time"
+    tags: ["annual review"]
+
+'2014-09-09':
+  - name: "🏡 Kellianne and I buy a house in Berkeley"
+    category: "family"
+    tags: ["home"]
+
+'2015-05-28':
+  - name: "🎂 I turn 39: Make wiggle room"
+    category: "birthday"
+    link: "https://busterbenson.com/2015/06/13/make-wiggle-room"
+    tags: ["annual review"]
+
+'2015-06-03':
+  - name: "My last day at Twitter"
+    category: "work"
+    tags: ["twitter"]
+
+'2015-06-08':
+  - name: "My first day at Slack"
+    category: "work"
+    tags: ["slack"]
+
+'2015-12-15':
+  - name: "We launch Slack's Platform"
+    category: "work"
+    tags: ["slack"]
+
+'2016-05-28':
+  - name: "🎂 I turn 40: Mind the loops"
+    category: "birthday"
+    link: "https://buster.medium.com/40-mind-the-loops-9e0c6ba35a87"
+    tags: ["annual review"]
+
+'2016-08-06':
+  - name: "❤️ Louie is born"
+    category: "family"
+    tags: ["louie"]
+
+'2016-09-01':
+  - name: "🧠 I publish the Cognitive Bias Cheat Sheet"
+    desc: "My first truly viral post. Eventually leads to a book deal."
+    category: "writing"
+    link: "https://betterhumans.coach.me/cognitive-bias-cheat-sheet-55a472476b18"
+    tags: ["biases"]
+
+'2016-11-08':
+  - name: "🤬 Trump wins the election"
+    category: "world"
+    tags: ["politics"]
+
+'2017-05-28':
+  - name: "🎂 I turn 41: Seek endarkenment"
+    category: "birthday"
+    link: "https://buster.medium.com/41-seek-endarkenment-9700663dea67"
+    tags: ["annual review"]
+
+'2017-11-12':
+  - name: "👴🏻 My grandfather passes away"
+    category : "family"
+
+'2018-01-30':
+  - name: "Signed a book deal for my book about arguing"
+    category: "writing"
+    tags: ["why are we yelling?"]
+
+'2018-02-21':
+  - name: "My last day at Slack"
+    category: "work"
+    tags: ["slack"]
+
+'2018-03-14':
+  - name: "My first day at Patreon"
+    category: "work"
+    tags: ["patreon"]
+
+'2018-05-28':
+  - name: "🎂 I turn 42: Dig deeper"
+    category: "birthday"
+    link: "https://busterbenson.com/2018/07/02/42-dig-deeper"
+    tags: ["annual review"]
+
+'2018-09-23':
+  - name: "My last day at Patreon"
+    category: "work"
+    tags: ["patreon"]
+
+'2018-10-01':
+  - name: "I begin working on my book full-time"
+    category: "writing"
+    tags: ["why are we yelling?"]
+
+'2019-05-28':
+  - name: "🎂 I turn 43: All in & with the flow"
+    category: "birthday"
+    link: "https://buster.medium.com/43-all-in-with-the-flow-e61e55b5dcf0"
+    tags: ["annual review"]
+
+'2019-11-19':
+  - name: "😱 Why Are We Yelling? is published"
+    category: "writing"
+    tags: ["why are we yelling?"]
+    link: "https://buster.medium.com/hello-this-is-my-book-b6aab9415f64"
+
+'2020-03-14':
+  - name: "🏠 First day of shelter-in-place for COVID-19"
+    category: "world"
+
+'2020-05-28':
+  - name: "🎂 I turn 44: Year of the Amateur"
+    category: "birthday"
+    link: "https://paper.dropbox.com/doc/44-Year-of-the-Amateur--A1I6fGSn30hLhQMF5kpFCXC7AQ-xzFR0pPTrr36OFxt7h86h"
+    tags: ["annual review"]
+
+'2020-12-14':
+  - name: "Biden officially declared winner of the election"
+    category: "world"
+    tags: ["politics"]
+
+'2021-01-06':
+  - name: "Trump supporters storm the Capital Building in DC"
+    category: "world"
+    tags: ["politics"]
+
+'2021-01-20':
+  - name: "Biden is inaugurated"
+    category: "world"
+    tags: ["politics"]
+
+'2021-05-04':
+  - name: "💉💉 I get my 2nd vaccination"
+    category: "world"
+    tags: ["pandemic"]
+
+'2021-05-28':
+  - name: "🎂 I turn 45: Year of Reconstellation"
+    category: "birthday"
+    link: "https://buster.medium.com/45-year-of-reconstellation-38f7c0917c1b"
+    tags: ["annual review"]
+
+'2022-04-29':
+  - name: "Kellianne and I officially divorced"
+    desc: "Separated in June of 2019."
+    category: "relatiohships"
+    tags: ["kellianne"]
+
+'2022-05-18':
+  - name: "I get COVID"
+    desc: "Got it from the kids. We all make it through with minimal symptoms, thank goodness for vaccines."
+    category: "relatiohships"
+    tags: ["pandemic"]
+
+'2022-05-28':
+  - name: "🎂 I turn 46: A Blagenflorble Heart"
+    category: "birthday"
+    link: "https://buster.medium.com/46-a-blagenflorble-heart-31bc2a992a83"
+    tags: ["annual review"]
+
+'2022-08-15':
+  - name: "My first day at Medium"
+    category: "work"
+    tags: ["medium"]
+
+'2023-02-19':
+  - name: "I adopted Pancake 😻"
+    category: "family"
+    tags: ["cat"]
+
+'2023-05-28':
+  - name: "🎂 I turn 47: CHALANT!"
+    category: "birthday"
+    link: "https://buster.medium.com/47-chalant-515c3ad09051"
+    tags: ["annual review"]
+
+'2023-12-12':
+  - name: "🏡 I buy a house in Albany"
+    category: "family"
+    tags: ["home"]
+
+'2023-10-24':
+  - name: "First date with Sarah"
+    category: "relationships"
+
+'2024-05-08':
+  - name: "Pancake has kittens 😻😻😻😻"
+    category: "family"
+    tags: ["cat"]
+
+'2024-05-28':
+  - name: "🎂 I turn 48: Be Buster Benson, BBB, Be Be Be, 🐝🐝🐝"
+    category: "birthday"
+    link: "https://buster.medium.com/48-be-buster-benson-bbb-be-be-be-ba0d51abcc7c"
+    tags: ["annual review"]
+
+'2024-10-03':
+  - name: "My last day at Medium"
+    category: "work"
+    tags: ["medium"]
+
+'2024-10-18':
+  - name: "Started full-time at 750 Words"
+    category: "work"
+    tags: ["750-words"]
+
+'2024-11-05':
+  - name: "🤮 Trump wins election"
+    category: "world"
+    tags: ["politics"]
+
+'2056-09-12': 
+  - name: "☠️ My life expectancy expiration date"
+    category: "self"
+    tags: []
+
+'2076-05-28':
+  - name: "🚲 Goal: ride a bike around the block on my 100th birthday"
+    category: "goal"
+    link: "https://medium.com/written-on-bart/a-big-hairy-audacious-goal-for-your-life-b52fa37bc169"
+    tags: ["health"]

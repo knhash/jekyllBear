@@ -1,3 +1,34 @@
+/* Tooltip for event squares */
+.week[data-event] {
+  position: relative;
+  cursor: pointer;
+}
+.week[data-event]:hover::after {
+  content: attr(data-event);
+  position: absolute;
+  background: var(--background-color);
+  color: var(--text-color);
+  padding: 0.6rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: var(--font-secondary);
+  font-weight: normal;
+  line-height: 1.4;
+  white-space: pre-line;
+  z-index: 100;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  top: 130%;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  max-width: 50vw;
+  min-width: max-content;
+  width: max-content;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  vertical-align: baseline;
+}
 
       
       
@@ -74,7 +105,7 @@ a:hover {
 header {
     margin-bottom: 40px;
     padding-bottom: 20px;
-    border-bottom: 3px dotted #232333;
+    border-bottom: 3px dotted var(--main-color);
 }
 
 nav a {
@@ -117,14 +148,10 @@ code {
 }
 
 blockquote {
-    border-left: 1px solid #999;
+    border-left: 1px solid var(--blockquote-color);
     color: var(--code-color);
     padding-left: 20px;
     font-style: italic;
-}
-
-header {
-  border-bottom: 3px dotted var(--main-color);
 }
 
 footer {
@@ -244,6 +271,221 @@ input[type=button], input[type=submit], input[type=reset] {
 ::placeholder {
   color: var(--text-color);
   opacity: 0.7;
+}
+
+/* Life in Weeks Styles */
+.life-in-weeks {
+  margin: 20px 0;
+}
+
+.weeks-grid {
+  margin: 60px 0;
+  font-family: var(--font-main);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  max-width: 100%;
+  align-items: flex-start;
+}
+
+/* Make weeks grid wider on larger screens while maintaining padding */
+@media (min-width: 1200px) {
+  .weeks-grid {
+    max-width: calc(100vw - 10vw);
+    width: calc(100vw - 10vw);
+    margin-left: calc((var(--width) - 100vw + 10vw) / 2);
+    margin-right: calc((var(--width) - 100vw + 10vw) / 2);
+  }
+}
+
+@media (min-width: 1400px) {
+  .weeks-grid {
+    max-width: calc(100vw - 10vw);
+    width: calc(100vw - 10vw);
+    margin-left: calc((var(--width) - 100vw + 10vw) / 2);
+    margin-right: calc((var(--width) - 100vw + 10vw) / 2);
+  }
+}
+
+.week {
+  min-width: 30px;
+  height: 30px;
+  border: 1px solid var(--main-color);
+  background-color: var(--background-color);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: help;
+  font-size: var(--font-scale);
+  line-height: 1.5;
+  padding: 4px 8px;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+/* Alternating decade bands */
+.week.decade-0 {
+  background-color: var(--background-color);
+}
+
+.week.decade-1 {
+  background-color: var(--code-background-color);
+}
+
+.week.future {
+  background-color: transparent;
+  border-color: var(--blockquote-color);
+  opacity: 0.3;
+}
+
+.week.decade-1.future {
+  background-color: var(--code-background-color);
+  opacity: 0.2;
+}
+
+.week.has-events {
+  border-color: var(--visited-color);
+  color: var(--text-color);
+  font-size: var(--font-scale);
+  min-width: auto;
+  width: auto;
+  padding: 4px 10px;
+}
+
+.week.has-events.future {
+  border-color: var(--blockquote-color);
+  opacity: 0.6;
+  color: var(--blockquote-color);
+}
+
+.week.current {
+  animation: pulse 2s ease-in-out infinite;
+  border-width: 2px;
+  border-color: var(--link-color);
+  box-shadow: 0 0 10px rgba(124, 64, 17, 0.3);
+}
+
+.week.current.has-events {
+  box-shadow: 0 0 10px rgba(124, 64, 17, 0.5);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .week.current {
+    box-shadow: 0 0 10px rgba(229, 162, 84, 0.3);
+  }
+  
+  .week.current.has-events {
+    box-shadow: 0 0 10px rgba(229, 162, 84, 0.5);
+  }
+}
+
+.event-indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--background-color);
+  font-size: 8px;
+  line-height: 1;
+}
+
+.events-list {
+  margin: 40px 0;
+  padding: 20px;
+  background-color: var(--code-background-color);
+  border-radius: 5px;
+}
+
+.events-list h3 {
+  margin-top: 0;
+  color: var(--heading-color);
+  border-bottom: 1px solid var(--main-color);
+  padding-bottom: 10px;
+}
+
+.event-item {
+  margin: 10px 0;
+  padding: 8px 0;
+  border-bottom: 1px dotted var(--blockquote-color);
+  font-size: 0.9em;
+  line-height: 1.4;
+}
+
+.event-item:last-child {
+  border-bottom: none;
+}
+
+.event-year {
+  color: var(--main-color);
+  margin-right: 15px;
+  min-width: 50px;
+  display: inline-block;
+}
+
+.event-name {
+  color: var(--heading-color);
+  margin-right: 10px;
+}
+
+.event-desc {
+  color: var(--text-color);
+  font-style: italic;
+  display: block;
+  margin-top: 5px;
+  margin-left: 65px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .week {
+    min-width: 26px;
+    height: 26px;
+    font-size: var(--font-scale);
+    padding: 3px 7px;
+  }
+  
+  .week.has-events {
+    font-size: var(--font-scale);
+    padding: 3px 8px;
+  }
+  
+  .event-desc {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .week {
+    min-width: 22px;
+    height: 22px;
+    font-size: var(--font-scale);
+    padding: 2px 6px;
+  }
+  
+  .week.has-events {
+    font-size: var(--font-scale);
+    padding: 2px 7px;
+  }
+  
+  .weeks-grid {
+    gap: 1px;
+  }
 }
       
   

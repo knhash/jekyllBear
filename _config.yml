@@ -56,6 +56,7 @@ exclude:
 exclude: [vendor]
 
 Blog: /blog
+Life: /life
 
 # Add general links to site pages here
 links:
