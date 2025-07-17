@@ -122,6 +122,18 @@ Use them as templates for your front matter.
 >To test your theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000`.
 
 
+## Recent Updates: Life in Weeks Interactive Carousel
+
+- The **Life in Weeks** page now features an interactive carousel blockquote above the grid, showing a key event from your life.
+- Up/down arrows let you cycle through events. The week number, event name, and description are shown, with the week number highlighted.
+- As you change the quote, the corresponding week in the grid pulses, visually connecting the event to its week.
+- The quote area has a fixed height and is vertically centered, so the grid never shifts as you browse events.
+- The grid is fully non-interactive (no tooltips, no pointer/question mark cursor), for a clean and minimal look.
+- The carousel arrows are styled to match the theme and do not show a highlight on click.
+- All code is lean and efficient: no extra network requests, no heavy JS, and all data is embedded at build time for instant loading.
+
+See `life.md`, `_layouts/life-in-weeks.html`, and `assets/life-carousel.js` for implementation details.
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/knhash/jekyllBear. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.

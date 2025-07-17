@@ -20,7 +20,34 @@ layout: compress
         {% assign start_day = split_start[2] %}
         {% assign end_year = page.end_year | plus: 0 %}
         
-        <div class="weeks-grid">
+        <!-- Carousel Blockquote Section -->
+        <div id="life-carousel-container" style="display: flex; align-items: center; margin: 2.2em 0 1.7em 0;" data-start-date="{{ page.start_date }}">
+          <div style="display: flex; flex-direction: column; align-items: center; margin-right: 1em;">
+            <button id="life-carousel-up" aria-label="Previous event" style="background: none; border: none; cursor: pointer; font-size: 1.5em; line-height: 1; padding: 0.2em;">
+              <span aria-hidden="true">&#9650;</span>
+            </button>
+            <button id="life-carousel-down" aria-label="Next event" style="background: none; border: none; cursor: pointer; font-size: 1.5em; line-height: 1; padding: 0.2em;">
+              <span aria-hidden="true">&#9660;</span>
+            </button>
+          </div>
+          <blockquote style="flex: 1; margin: 0; font-size: 1.1em; height: 7.5em; max-width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; line-height: 1.5; overflow: hidden; font-style: normal;">
+            <span id="life-carousel-quote"></span>
+            <span id="life-carousel-meta" style="font-size: 0.95em; color: var(--main-color); margin-top: 0.5em;"></span>
+          </blockquote>
+        </div>
+        {% capture events_json %}[
+        {% assign first = true %}
+        {% for event_date in data %}
+          {% assign date = event_date[0] %}
+          {% for event in event_date[1] %}
+            {% unless first %},{% endunless %}{"name":{{ event.name | jsonify }},"desc":{{ event.desc | jsonify }},"date":{{ date | jsonify }}}
+            {% assign first = false %}
+          {% endfor %}
+        {% endfor %}
+        ]{% endcapture %}
+        <script id="life-in-weeks-events-json" type="application/json">{{ events_json | strip }}</script>
+        <script src="{{ "/assets/life-carousel.js" | relative_url }}"></script>
+        <div class="weeks-grid" style="margin-top: 1.7em;">
             {% assign total_years = end_year | minus: start_year | plus: 1 %}
             {% assign total_weeks = total_years | times: 52 %}
             {% if total_weeks > 0 %}
@@ -67,9 +94,9 @@ layout: compress
                         {% assign is_current = true %}
                     {% endif %}
                     {% assign decade_mod = decade | modulo: 2 %}
-                    <div class="week decade-{{ decade_mod }}{% if week_has_events %} has-events{% endif %}{% if is_future %} future{% endif %}{% if is_current %} current{% endif %}" 
-                         {% if week_has_events %}data-event="{{ week_tooltip | strip }}"{% endif %}>
-                        {% if week_has_events %}{{ week_events | strip }}{% endif %}
+                    <div class="week decade-{{ decade_mod }}{% if week_has_events %} has-events{% endif %}{% if is_future %} future{% endif %}{% if is_current %} current{% endif %}"
+                         data-week-number="{{ week_index }}">
+                        <!-- No event text, just highlight -->
                     </div>
                     {% assign week_index = week_index | plus: 1 %}
                 {% endfor %}

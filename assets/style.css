@@ -1,7 +1,64 @@
+/* Highlighted week number in carousel quote */
+.carousel-weeknum {
+  color: var(--link-color);
+  font-weight: bold;
+  font-style: normal;
+}
+/* Pulse effect for carousel-selected week */
+.carousel-pulse {
+  animation: carousel-pulse 1.2s cubic-bezier(0.4,0,0.6,1) infinite;
+  border-width: 2px !important;
+  border-color: var(--link-color) !important;
+  box-shadow: 0 0 10px rgba(124, 64, 17, 0.5);
+  z-index: 2;
+}
+
+@keyframes carousel-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.18);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+/* Carousel arrow button styles */
+#life-carousel-up, #life-carousel-down {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5em;
+  line-height: 1;
+  padding: 0.2em;
+  color: var(--main-color);
+  outline: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: color 0.2s;
+}
+#life-carousel-up:focus, #life-carousel-down:focus, #life-carousel-up:active, #life-carousel-down:active {
+  outline: none;
+  box-shadow: none;
+  background: none;
+  color: var(--main-color);
+}
+#life-carousel-up span, #life-carousel-down span {
+  color: inherit;
+}
 /* Tooltip for event squares */
+
 .week[data-event] {
   position: relative;
-  cursor: pointer;
+  cursor: default !important;
+}
+
+.week {
+  cursor: default !important;
 }
 
 /* Desktop: show tooltip on hover */
@@ -332,28 +389,11 @@ input[type=button], input[type=submit], input[type=reset] {
   align-items: flex-start;
 }
 
-/* Make weeks grid wider on larger screens while maintaining padding */
-@media (min-width: 1200px) {
-  .weeks-grid {
-    max-width: calc(100vw - 20vw);
-    width: calc(100vw - 20vw);
-    margin-left: calc((var(--width) - 100vw + 20vw) / 2);
-    margin-right: calc((var(--width) - 100vw + 20vw) / 2);
-  }
-}
-
-@media (min-width: 1400px) {
-  .weeks-grid {
-    max-width: calc(100vw - 20vw);
-    width: calc(100vw - 20vw);
-    margin-left: calc((var(--width) - 100vw + 20vw) / 2);
-    margin-right: calc((var(--width) - 100vw + 20vw) / 2);
-  }
-}
+/* Removed wide-screen overrides for .weeks-grid to always fit its container */
 
 .week {
-  min-width: 30px;
-  height: 30px;
+  width: 16px;
+  height: 16px;
   border: 1px solid var(--main-color);
   background-color: var(--background-color);
   display: inline-flex;
@@ -364,7 +404,7 @@ input[type=button], input[type=submit], input[type=reset] {
   font-family: var(--font-thin);
   font-size: var(--font-scale);
   line-height: 1.5;
-  padding: 4px 8px;
+  padding: 2px 2px;
   white-space: nowrap;
   box-sizing: border-box;
 }
@@ -391,11 +431,10 @@ input[type=button], input[type=submit], input[type=reset] {
 
 .week.has-events {
   border-color: var(--visited-color);
-  color: var(--text-color);
+  background-color: var(--blockquote-color);
+  color: inherit;
   font-size: var(--font-scale);
-  min-width: auto;
-  width: auto;
-  padding: 4px 10px;
+  padding: 0;
 }
 
 .week.has-events.future {
