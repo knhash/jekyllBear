@@ -3,41 +3,85 @@
   position: relative;
   cursor: pointer;
 }
-.week[data-event]:hover::after {
-  content: attr(data-event);
-  position: absolute;
-  background: var(--background-color);
-  color: var(--text-color);
-  padding: 0.6rem;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-family: var(--font-secondary);
-  font-weight: normal;
-  line-height: 1.4;
-  white-space: pre-line;
-  z-index: 100;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
-  top: 130%;
-  left: 50%;
-  transform: translateX(-50%);
-  pointer-events: none;
-  max-width: 50vw;
-  min-width: max-content;
-  width: max-content;
-  text-align: left;
-  display: flex;
-  align-items: center;
-  vertical-align: baseline;
+
+/* Desktop: show tooltip on hover */
+@media (hover: hover) {
+  .week[data-event]:hover::after {
+    content: attr(data-event);
+    position: absolute;
+    background: var(--background-color);
+    color: var(--text-color);
+    padding: 0.6rem;
+    border-radius: 0.2rem;
+    border: 1px solid var(--blockquote-color);
+    font-size: 1rem;
+    font-family: var(--font-thin);
+    font-weight: normal;
+    line-height: 1.2;
+    white-space: pre-line;
+    z-index: 100;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    top: 130%;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+    max-width: 30vw;
+    min-width: max-content;
+    width: max-content;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    vertical-align: baseline;
+  }
+}
+
+/* Mobile: show tooltip on active/focus */
+@media (hover: none) {
+  .week[data-event]:active::after,
+  .week[data-event]:focus::after {
+    content: attr(data-event);
+    position: absolute;
+    background: var(--background-color);
+    color: var(--text-color);
+    padding: 0.6rem;
+    border-radius: 0.2rem;
+    border: 1px solid var(--blockquote-color);
+    font-size: 1rem;
+    font-family: var(--font-thin);
+    font-weight: normal;
+    line-height: 1.2;
+    white-space: pre-line;
+    z-index: 100;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    top: 130%;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+    max-width: 50vw;
+    min-width: max-content;
+    width: max-content;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    vertical-align: baseline;
+  }
+  
+  .week[data-event] {
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+  }
 }
 
       
       
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 :root {
     --width: 900px;
-    --font-main: 'Fira Code', monospace;
-    --font-secondary: 'Fira Code', monospace;
+    --font-main: 'IBM Plex Sans', sans-serif;
+    --font-thin: 'IBM Plex Sans Thin', sans-serif;
+    --font-secondary: 'IBM Plex Sans', sans-serif;
+    --font-monospace: 'IBM Plex Mono', monospace;
     --font-scale: .95em;
     --background-color: #F8F1E5; /* Lighter cream */
     --heading-color: #2C1E15; /* Darker roast coffee */
@@ -140,7 +184,7 @@ img {
 }
 
 code {
-    font-family: monospace;
+    font-family: var(--font-monospace);
     padding: 2px;
     background-color: var(--code-background-color);
     color: var(--code-color);
@@ -225,7 +269,8 @@ td {
 
 /* external link marker */
 a[href^="http"]:where(:not([href*="knhash.in/"])):not(:has(img))::after {
-    content: "↗"
+    content: "↗";
+    font-family: var(--font-monospace);
 }
 
 /* Form elements */
@@ -280,7 +325,6 @@ input[type=button], input[type=submit], input[type=reset] {
 
 .weeks-grid {
   margin: 60px 0;
-  font-family: var(--font-main);
   display: flex;
   flex-wrap: wrap;
   gap: 2px;
@@ -291,19 +335,19 @@ input[type=button], input[type=submit], input[type=reset] {
 /* Make weeks grid wider on larger screens while maintaining padding */
 @media (min-width: 1200px) {
   .weeks-grid {
-    max-width: calc(100vw - 10vw);
-    width: calc(100vw - 10vw);
-    margin-left: calc((var(--width) - 100vw + 10vw) / 2);
-    margin-right: calc((var(--width) - 100vw + 10vw) / 2);
+    max-width: calc(100vw - 20vw);
+    width: calc(100vw - 20vw);
+    margin-left: calc((var(--width) - 100vw + 20vw) / 2);
+    margin-right: calc((var(--width) - 100vw + 20vw) / 2);
   }
 }
 
 @media (min-width: 1400px) {
   .weeks-grid {
-    max-width: calc(100vw - 10vw);
-    width: calc(100vw - 10vw);
-    margin-left: calc((var(--width) - 100vw + 10vw) / 2);
-    margin-right: calc((var(--width) - 100vw + 10vw) / 2);
+    max-width: calc(100vw - 20vw);
+    width: calc(100vw - 20vw);
+    margin-left: calc((var(--width) - 100vw + 20vw) / 2);
+    margin-right: calc((var(--width) - 100vw + 20vw) / 2);
   }
 }
 
@@ -317,6 +361,7 @@ input[type=button], input[type=submit], input[type=reset] {
   justify-content: center;
   position: relative;
   cursor: help;
+  font-family: var(--font-thin);
   font-size: var(--font-scale);
   line-height: 1.5;
   padding: 4px 8px;
