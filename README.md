@@ -18,7 +18,7 @@ This is a port of it's theme to Jekyll, with some tweaks. So you can use GitHub 
 - Code highlighting
 - **Life in Weeks visualization** - Interactive timeline of your life events
 - **IBM Plex Mono typography** - Consistent monospace font across all elements
-- **Coffee-themed color palette** - Warm, coffee-inspired colors with automatic dark mode
+- **Pine Forest color palette** - Cool, nature-inspired greens with automatic dark mode
 
 ## Screenshots
 
@@ -61,7 +61,7 @@ Or install it yourself as:
 
 ### Design Philosophy
 
-jekyllBear now features a **monospace-first design** with IBM Plex Mono typography, creating a technical yet warm aesthetic. The coffee-themed color palette provides visual comfort while maintaining excellent readability across light and dark modes.
+jekyllBear now features a **monospace-first design** with IBM Plex Mono typography, creating a technical yet natural aesthetic. The pine forest color palette provides visual tranquility while maintaining excellent readability across light and dark modes, evoking the calm and focus of a peaceful woodland environment.
 
 ### Customization
 
@@ -69,7 +69,9 @@ The theme's CSS is now highly modular and customizable:
 
 - **Typography**: Modify `--font-main`, `--font-secondary`, and `--font-monospace` variables
 - **Spacing**: Use the standardized spacing scale for consistent layouts
-- **Colors**: All theme colors are centralized in CSS custom properties
+- **Colors**: All theme colors are centralized in CSS custom properties for easy customization
+- **Pine Forest Palette**: Cool greens ranging from light pine mist to deep forest shadows
+- **Glow Effects**: Configurable glow colors via `--glow-color-light` and `--glow-color-medium`
 - **Layout**: Responsive design with mobile-first approach
 
 ## Usage

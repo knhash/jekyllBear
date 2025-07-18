@@ -1,5 +1,5 @@
 /* =============================================================================
-   JEKYLL BEAR THEME - COFFEE AESTHETIC
+   JEKYLL BEAR THEME - PINE FOREST AESTHETIC
    ============================================================================= */
 /* =============================================================================
    FONTS & IMPORTS
@@ -40,35 +40,43 @@
     --z-dropdown: 200;
     --z-modal: 1000;
     
-    /* Coffee Theme Colors - Light Mode */
-    --background-color: #F8F1E5; /* Lighter cream */
-    --heading-color: #2C1E15; /* Darker roast coffee */
-    --text-color: #1F1408; /* Darker espresso */
-    --link-color: #7C4011; /* Darker caramel */
-    --visited-color: #5E3211; /* Darker roasted coffee beans */
-    --main-color: #96572D; /* Darker café au lait */
-    --code-background-color: #E6D7C3; /* Coffee stained paper */
-    --code-color: #2C1E15; /* Darker roast coffee */
-    --blockquote-color: #B99B6B; /* Darker café latte foam */
+    /* Pine Forest Theme Colors - Light Mode */
+    --background-color: #F5F7F3; /* Light pine needle mist */
+    --heading-color: #1A3025; /* Deep forest green */
+    --text-color: #0F2018; /* Dark pine shadow */
+    --link-color: #2D5016; /* Forest moss */
+    --visited-color: #1E3A11; /* Deep woodland */
+    --main-color: #4A7C59; /* Pine needle green */
+    --code-background-color: #E8EDEA; /* Frosted pine */
+    --code-color: #1A3025; /* Deep forest green */
+    --blockquote-color: #7A9B85; /* Sage green */
     
     /* Interactive colors derived from theme */
     --hover-color: white;
     --border-color: var(--blockquote-color);
     --shadow-color: rgba(0, 0, 0, 0.18);
+    
+    /* Glow effects for interactive elements */
+    --glow-color-light: rgba(45, 80, 22, 0.3);
+    --glow-color-medium: rgba(45, 80, 22, 0.5);
 }
 
 /* Dark Mode Color Overrides */
 @media (prefers-color-scheme: dark) {
     :root {
-        --background-color: #1A1310; /* Darker espresso */
-        --heading-color: #F0DFC0; /* Lighter café latte foam */
-        --text-color: #F0E6D2; /* Lighter coffee stained paper */
-        --link-color: #E5A254; /* Lighter caramel drizzle */
-        --visited-color: #C49B76; /* Lighter roasted coffee beans */
-        --main-color: #B89470; /* Lighter mocha */
-        --code-background-color: #2C2117; /* Dark chocolate coffee */
-        --code-color: #F0DFC0; /* Lighter café latte foam */
-        --blockquote-color: #6E563D; /* Lighter coffee grounds */
+        --background-color: #0D1B12; /* Dark pine shadow */
+        --heading-color: #C8D8CE; /* Light pine mist */
+        --text-color: #E0EADE; /* Pale forest light */
+        --link-color: #7AB069; /* Bright moss green */
+        --visited-color: #9BC490; /* Light woodland */
+        --main-color: #8BB899; /* Soft pine green */
+        --code-background-color: #1A2B1F; /* Dark evergreen */
+        --code-color: #C8D8CE; /* Light pine mist */
+        --blockquote-color: #4A6B52; /* Forest undergrowth */
+        
+        /* Dark mode glow effects */
+        --glow-color-light: rgba(122, 176, 105, 0.3);
+        --glow-color-medium: rgba(122, 176, 105, 0.5);
     }
 }
 
@@ -399,11 +407,11 @@ input[type=reset] {
     animation: pulse 2s ease-in-out infinite;
     border-width: 2px;
     border-color: var(--link-color);
-    box-shadow: 0 0 10px rgba(124, 64, 17, 0.3);
+    box-shadow: 0 0 10px var(--glow-color-light);
 }
 
 .week.current.has-events {
-    box-shadow: 0 0 10px rgba(124, 64, 17, 0.5);
+    box-shadow: 0 0 10px var(--glow-color-medium);
 }
 
 @keyframes pulse {
@@ -424,11 +432,11 @@ input[type=reset] {
 /* Dark Mode Week Adjustments */
 @media (prefers-color-scheme: dark) {
     .week.current {
-        box-shadow: 0 0 10px rgba(229, 162, 84, 0.3);
+        box-shadow: 0 0 10px var(--glow-color-light);
     }
     
     .week.current.has-events {
-        box-shadow: 0 0 10px rgba(229, 162, 84, 0.5);
+        box-shadow: 0 0 10px var(--glow-color-medium);
     }
 }
 
@@ -510,7 +518,7 @@ input[type=reset] {
     animation: carousel-pulse 1.2s cubic-bezier(0.4,0,0.6,1) infinite;
     border-width: 2px !important;
     border-color: var(--link-color) !important;
-    box-shadow: 0 0 10px rgba(124, 64, 17, 0.5);
+    box-shadow: 0 0 10px var(--glow-color-medium);
     z-index: 2;
 }
 

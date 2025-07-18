@@ -2,12 +2,12 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "jekyll-bear-theme"
-  spec.version       = "0.2.4"
+  spec.version       = "0.3.0"
   spec.authors       = ["knhash"]
   spec.email         = ["mail@knhash.in"]
 
-  spec.summary       = "A minimal, text focused blog theme inspired by Bear Blog"
-  spec.description   = "jekyllBear is a clean, minimal Jekyll theme focused on readability and simplicity. Features include a responsive design, tag system, life tracking, and a distraction-free reading experience inspired by Bear Blog."
+  spec.summary       = "A minimal, text focused blog theme with Pine Forest aesthetics"
+  spec.description   = "jekyllBear is a clean, minimal Jekyll theme focused on readability and simplicity. Features a Pine Forest color palette with cool, nature-inspired greens, IBM Plex Mono typography, responsive design, tag system, life tracking visualization, and a distraction-free reading experience inspired by Bear Blog."
   spec.homepage      = "https://knhash.in/jekyllBear"
   spec.license       = "MIT"
 
