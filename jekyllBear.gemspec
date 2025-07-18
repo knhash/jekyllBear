@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "jekyll-bear-theme"
-  spec.version       = "0.3.0"
+  spec.version       = "0.3.1"
   spec.authors       = ["knhash"]
   spec.email         = ["mail@knhash.in"]
 
