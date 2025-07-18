@@ -536,17 +536,40 @@ input[type=button], input[type=submit], input[type=reset] {
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+/* Responsive sizing to fit ~52 squares across screen width */
+@media (max-width: 1200px) {
   .week {
-    min-width: 26px;
-    height: 26px;
-    font-size: var(--font-scale);
-    padding: 3px 7px;
+    width: calc((100vw - 40px - (51 * 2px)) / 52);
+    height: calc((100vw - 40px - (51 * 2px)) / 52);
+    font-size: calc(var(--font-scale) * 0.8);
+    padding: 0;
+    min-width: 8px;
+    min-height: 8px;
   }
   
   .week.has-events {
-    font-size: var(--font-scale);
-    padding: 3px 8px;
+    font-size: calc(var(--font-scale) * 0.8);
+    padding: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .week {
+    width: calc((100vw - 40px - (51 * 1px)) / 52);
+    height: calc((100vw - 40px - (51 * 1px)) / 52);
+    font-size: calc(var(--font-scale) * 0.7);
+    padding: 0;
+    min-width: 8px;
+    min-height: 8px;
+  }
+  
+  .week.has-events {
+    font-size: calc(var(--font-scale) * 0.7);
+    padding: 0;
+  }
+  
+  .weeks-grid {
+    gap: 1px;
   }
   
   .event-desc {
@@ -556,15 +579,17 @@ input[type=button], input[type=submit], input[type=reset] {
 
 @media (max-width: 480px) {
   .week {
-    min-width: 22px;
-    height: 22px;
-    font-size: var(--font-scale);
-    padding: 2px 6px;
+    width: calc((100vw - 40px - (51 * 1px)) / 52);
+    height: calc((100vw - 40px - (51 * 1px)) / 52);
+    font-size: calc(var(--font-scale) * 0.6);
+    padding: 0;
+    min-width: 8px;
+    min-height: 8px;
   }
   
   .week.has-events {
-    font-size: var(--font-scale);
-    padding: 2px 7px;
+    font-size: calc(var(--font-scale) * 0.6);
+    padding: 0;
   }
   
   .weeks-grid {
