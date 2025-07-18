@@ -12,6 +12,9 @@
     <link href='{{ site.baseurl }}/feed.xml' rel='alternate' type='application/atom+xml'>
     <link rel="canonical" href="{{ site.baseurl }}{{ page.url }}">
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/style.css">
+    {% if page.layout == 'life-in-weeks' %}
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/life-in-weeks.css">
+    {% endif %}
 </head>
 
 <body>

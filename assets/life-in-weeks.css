@@ -1,0 +1,349 @@
+/* =============================================================================
+   LIFE IN WEEKS - CSS CUSTOM PROPERTIES
+   ============================================================================= */
+
+:root {
+    /* Decade band colors for better contrast */
+    --decade-0-bg: var(--background-color);
+    --decade-1-bg: var(--blockquote-color);
+    --decade-0-opacity: 1;
+    --decade-1-opacity: 0.7;
+    --decade-future-opacity: 0.15;
+    
+    /* Event week colors - distinct from decade bands */
+    --event-bg: var(--main-color);
+    --event-border: var(--visited-color);
+    --event-future-opacity: 0.6;
+}
+
+/* Dark mode decade adjustments */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --decade-0-bg: var(--background-color);
+        --decade-1-bg: var(--code-background-color);
+        --decade-0-opacity: 1;
+        --decade-1-opacity: 0.8;
+        --decade-future-opacity: 0.2;
+        
+        /* Event colors for dark mode */
+        --event-bg: var(--link-color);
+        --event-border: var(--main-color);
+        --event-future-opacity: 0.7;
+    }
+}
+
+/* =============================================================================
+   LIFE IN WEEKS - STANDALONE CSS MODULE
+   ============================================================================= */
+
+/* This CSS file contains all styles specific to the Life in Weeks visualization.
+   It should be included in addition to the base theme styles. */
+
+/* =============================================================================
+   LIFE IN WEEKS - MAIN COMPONENT
+   ============================================================================= */
+
+.life-in-weeks {
+    margin: var(--spacing-md) 0;
+}
+
+.weeks-grid {
+    margin: var(--spacing-xl) 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    max-width: 100%;
+    align-items: flex-start;
+}
+
+/* Week Square Base Styles */
+.week {
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--main-color);
+    background-color: var(--background-color);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: default;
+    font-family: var(--font-secondary);
+    font-size: var(--font-scale);
+    line-height: 1.5;
+    padding: 2px;
+    white-space: nowrap;
+    box-sizing: border-box;
+    transition: all var(--transition-fast) ease;
+}
+
+/* Week Square State Variations */
+.week.decade-0 {
+    background-color: var(--decade-0-bg);
+    border-color: var(--main-color);
+    opacity: var(--decade-0-opacity);
+}
+
+.week.decade-1 {
+    background-color: var(--decade-1-bg);
+    border-color: var(--main-color);
+    opacity: var(--decade-1-opacity);
+}
+
+.week.future {
+    background-color: transparent;
+    border-color: var(--blockquote-color);
+    opacity: 0.3;
+}
+
+.week.decade-1.future {
+    background-color: var(--decade-1-bg);
+    opacity: var(--decade-future-opacity);
+}
+
+.week.has-events {
+    border-color: var(--event-border);
+    background-color: var(--event-bg);
+    color: var(--background-color);
+    font-size: var(--font-scale);
+    padding: 0;
+}
+
+.week.has-events.future {
+    border-color: var(--event-border);
+    background-color: var(--event-bg);
+    opacity: var(--event-future-opacity);
+    color: var(--background-color);
+}
+
+/* Current Week Animation */
+.week.current {
+    animation: pulse 2s ease-in-out infinite;
+    border-width: 2px;
+    border-color: var(--link-color);
+    box-shadow: 0 0 10px var(--glow-color-light);
+}
+
+.week.current.has-events {
+    box-shadow: 0 0 10px var(--glow-color-medium);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Dark Mode Week Adjustments */
+@media (prefers-color-scheme: dark) {
+    .week.current {
+        box-shadow: 0 0 10px var(--glow-color-light);
+    }
+    
+    .week.current.has-events {
+        box-shadow: 0 0 10px var(--glow-color-medium);
+    }
+}
+
+/* =============================================================================
+   LIFE IN WEEKS - INTERACTIVE COMPONENTS
+   ============================================================================= */
+
+/* Event Indicator */
+.event-indicator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--background-color);
+    font-size: 8px;
+    line-height: 1;
+}
+
+/* Events List */
+.events-list {
+    margin: var(--spacing-lg) 0;
+    padding: var(--spacing-md);
+    background-color: var(--code-background-color);
+    border-radius: var(--radius-md);
+}
+
+.events-list h3 {
+    margin-top: 0;
+    color: var(--heading-color);
+    border-bottom: 1px solid var(--main-color);
+    padding-bottom: var(--spacing-sm);
+}
+
+.event-item {
+    margin: var(--spacing-sm) 0;
+    padding: 8px 0;
+    border-bottom: 1px dotted var(--blockquote-color);
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+.event-item:last-child {
+    border-bottom: none;
+}
+
+.event-year {
+    color: var(--main-color);
+    margin-right: 15px;
+    min-width: 50px;
+    display: inline-block;
+}
+
+.event-name {
+    color: var(--heading-color);
+    margin-right: var(--spacing-sm);
+}
+
+.event-desc {
+    color: var(--text-color);
+    font-style: italic;
+    display: block;
+    margin-top: var(--spacing-xs);
+    margin-left: 65px;
+}
+
+/* =============================================================================
+   LIFE IN WEEKS - CAROUSEL COMPONENTS
+   ============================================================================= */
+
+/* Highlighted week number in carousel quote */
+.carousel-weeknum {
+    color: var(--link-color);
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* Pulse effect for carousel-selected week */
+.carousel-pulse {
+    animation: carousel-pulse 1.2s cubic-bezier(0.4,0,0.6,1) infinite;
+    border-width: 2px !important;
+    border-color: var(--link-color) !important;
+    box-shadow: 0 0 10px var(--glow-color-medium);
+    z-index: 2;
+}
+
+@keyframes carousel-pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.18);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Carousel arrow button styles */
+#life-carousel-up, 
+#life-carousel-down {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5em;
+    line-height: 1;
+    padding: 0.2em;
+    color: var(--main-color);
+    outline: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: color var(--transition-fast);
+}
+
+#life-carousel-up:focus, 
+#life-carousel-down:focus, 
+#life-carousel-up:active, 
+#life-carousel-down:active {
+    outline: none;
+    box-shadow: none;
+    background: none;
+    color: var(--main-color);
+}
+
+#life-carousel-up span, 
+#life-carousel-down span {
+    color: inherit;
+}
+
+/* =============================================================================
+   LIFE IN WEEKS - RESPONSIVE DESIGN
+   ============================================================================= */
+
+/* Large screens - optimize week grid sizing */
+@media (max-width: 1200px) {
+    .week {
+        width: calc((100vw - 40px - (51 * 2px)) / 52);
+        height: calc((100vw - 40px - (51 * 2px)) / 52);
+        font-size: calc(var(--font-scale) * 0.8);
+        padding: 0;
+        min-width: 8px;
+        min-height: 8px;
+    }
+    
+    .week.has-events {
+        font-size: calc(var(--font-scale) * 0.8);
+        padding: 0;
+    }
+}
+
+/* Tablet screens */
+@media (max-width: 768px) {
+    .week {
+        width: calc((100vw - 40px - (51 * 1px)) / 52);
+        height: calc((100vw - 40px - (51 * 1px)) / 52);
+        font-size: calc(var(--font-scale) * 0.7);
+        padding: 0;
+        min-width: 8px;
+        min-height: 8px;
+    }
+    
+    .week.has-events {
+        font-size: calc(var(--font-scale) * 0.7);
+        padding: 0;
+    }
+    
+    .weeks-grid {
+        gap: 1px;
+    }
+    
+    .event-desc {
+        margin-left: 0;
+    }
+}
+
+/* Mobile screens */
+@media (max-width: 480px) {
+    .week {
+        width: calc((100vw - 40px - (51 * 1px)) / 52);
+        height: calc((100vw - 40px - (51 * 1px)) / 52);
+        font-size: calc(var(--font-scale) * 0.6);
+        padding: 0;
+        min-width: 8px;
+        min-height: 8px;
+    }
+    
+    .week.has-events {
+        font-size: calc(var(--font-scale) * 0.6);
+        padding: 0;
+    }
+    
+    .weeks-grid {
+        gap: 1px;
+    }
+}
