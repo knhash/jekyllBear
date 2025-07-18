@@ -1,145 +1,46 @@
-/* Highlighted week number in carousel quote */
-.carousel-weeknum {
-  color: var(--link-color);
-  font-weight: bold;
-  font-style: normal;
-}
-/* Pulse effect for carousel-selected week */
-.carousel-pulse {
-  animation: carousel-pulse 1.2s cubic-bezier(0.4,0,0.6,1) infinite;
-  border-width: 2px !important;
-  border-color: var(--link-color) !important;
-  box-shadow: 0 0 10px rgba(124, 64, 17, 0.5);
-  z-index: 2;
-}
+/* =============================================================================
+   JEKYLL BEAR THEME - COFFEE AESTHETIC
+   ============================================================================= */
+/* =============================================================================
+   FONTS & IMPORTS
+   ============================================================================= */
 
-@keyframes carousel-pulse {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.18);
-    opacity: 0.7;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-/* Carousel arrow button styles */
-#life-carousel-up, #life-carousel-down {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 1.5em;
-  line-height: 1;
-  padding: 0.2em;
-  color: var(--main-color);
-  outline: none;
-  user-select: none;
-  -webkit-tap-highlight-color: transparent;
-  transition: color 0.2s;
-}
-#life-carousel-up:focus, #life-carousel-down:focus, #life-carousel-up:active, #life-carousel-down:active {
-  outline: none;
-  box-shadow: none;
-  background: none;
-  color: var(--main-color);
-}
-#life-carousel-up span, #life-carousel-down span {
-  color: inherit;
-}
-/* Tooltip for event squares */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
-.week[data-event] {
-  position: relative;
-  cursor: default !important;
-}
-
-.week {
-  cursor: default !important;
-}
-
-/* Desktop: show tooltip on hover */
-@media (hover: hover) {
-  .week[data-event]:hover::after {
-    content: attr(data-event);
-    position: absolute;
-    background: var(--background-color);
-    color: var(--text-color);
-    padding: 0.6rem;
-    border-radius: 0.2rem;
-    border: 1px solid var(--blockquote-color);
-    font-size: 1rem;
-    font-family: var(--font-thin);
-    font-weight: normal;
-    line-height: 1.2;
-    white-space: pre-line;
-    z-index: 100;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
-    top: 130%;
-    left: 50%;
-    transform: translateX(-50%);
-    pointer-events: none;
-    max-width: 30vw;
-    min-width: max-content;
-    width: max-content;
-    text-align: left;
-    display: flex;
-    align-items: center;
-    vertical-align: baseline;
-  }
-}
-
-/* Mobile: show tooltip on active/focus */
-@media (hover: none) {
-  .week[data-event]:active::after,
-  .week[data-event]:focus::after {
-    content: attr(data-event);
-    position: absolute;
-    background: var(--background-color);
-    color: var(--text-color);
-    padding: 0.6rem;
-    border-radius: 0.2rem;
-    border: 1px solid var(--blockquote-color);
-    font-size: 1rem;
-    font-family: var(--font-thin);
-    font-weight: normal;
-    line-height: 1.2;
-    white-space: pre-line;
-    z-index: 100;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
-    top: 130%;
-    left: 50%;
-    transform: translateX(-50%);
-    pointer-events: none;
-    max-width: 50vw;
-    min-width: max-content;
-    width: max-content;
-    text-align: left;
-    display: flex;
-    align-items: center;
-    vertical-align: baseline;
-  }
-  
-  .week[data-event] {
-    -webkit-tap-highlight-color: transparent;
-    outline: none;
-  }
-}
-
-      
-      
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+/* =============================================================================
+   CSS CUSTOM PROPERTIES (VARIABLES)
+   ============================================================================= */
 
 :root {
-    --width: 900px;
-    --font-main: 'IBM Plex Sans', sans-serif;
-    --font-thin: 'IBM Plex Sans Thin', sans-serif;
-    --font-secondary: 'IBM Plex Sans', sans-serif;
+    /* Layout */
+    --width: 720px;
+    
+    /* Typography */
+    --font-main: 'IBM Plex Mono', monospace;
+    --font-secondary: 'IBM Plex Mono', monospace;
     --font-monospace: 'IBM Plex Mono', monospace;
-    --font-scale: .95em;
+    --font-scale: 0.9em;
+    
+    /* Spacing */
+    --spacing-xs: 5px;
+    --spacing-sm: 10px;
+    --spacing-md: 20px;
+    --spacing-lg: 40px;
+    --spacing-xl: 60px;
+    
+    /* Border radius */
+    --radius-sm: 3px;
+    --radius-md: 5px;
+    
+    /* Transitions */
+    --transition-fast: 0.2s;
+    --transition-normal: 0.3s;
+    
+    /* Z-index scale */
+    --z-dropdown: 200;
+    --z-modal: 1000;
+    
+    /* Coffee Theme Colors - Light Mode */
     --background-color: #F8F1E5; /* Lighter cream */
     --heading-color: #2C1E15; /* Darker roast coffee */
     --text-color: #1F1408; /* Darker espresso */
@@ -149,8 +50,14 @@
     --code-background-color: #E6D7C3; /* Coffee stained paper */
     --code-color: #2C1E15; /* Darker roast coffee */
     --blockquote-color: #B99B6B; /* Darker café latte foam */
+    
+    /* Interactive colors derived from theme */
+    --hover-color: white;
+    --border-color: var(--blockquote-color);
+    --shadow-color: rgba(0, 0, 0, 0.18);
 }
 
+/* Dark Mode Color Overrides */
 @media (prefers-color-scheme: dark) {
     :root {
         --background-color: #1A1310; /* Darker espresso */
@@ -165,11 +72,15 @@
     }
 }
 
+/* =============================================================================
+   BASE STYLES
+   ============================================================================= */
+
 body {
     font-family: var(--font-secondary);
     font-size: var(--font-scale);
     margin: auto;
-    padding: 20px;
+    padding: var(--spacing-md);
     max-width: var(--width);
     text-align: left;
     background-color: var(--background-color);
@@ -179,15 +90,22 @@ body {
     color: var(--text-color);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+/* =============================================================================
+   TYPOGRAPHY
+   ============================================================================= */
+
+h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-main);
     color: var(--heading-color);
 }
+
+strong, b {
+    color: var(--heading-color);
+}
+
+/* =============================================================================
+   LINKS
+   ============================================================================= */
 
 a {
     color: var(--link-color);
@@ -195,75 +113,23 @@ a {
     cursor: pointer;
     text-decoration: none;
     border-bottom: 3px solid var(--main-color);
+    transition: all var(--transition-fast) ease;
 }
 
 a:hover {
     background-color: var(--main-color);
-    color: white;
+    color: var(--hover-color);
     text-decoration: none;
 }
 
-header {
-    margin-bottom: 40px;
-    padding-bottom: 20px;
-    border-bottom: 3px dotted var(--main-color);
+a:visited {
+    color: var(--visited-color);
 }
 
-nav a {
-    margin-right: 8px;
-}
-
-strong,
-b {
-    color: var(--heading-color);
-}
-
-button {
-    margin: 0;
-    cursor: pointer;
-}
-
-main {
-    line-height: 1.6;
-}
-
-table {
-    width: 100%;
-}
-
-hr {
-    border: 0;
-    border-top: 1px dashed;
-}
-
-img {
-    max-width: 100%;
-}
-
-code {
+/* External link marker */
+a[href^="http"]:where(:not([href*="knhash.in/"])):not(:has(img))::after {
+    content: "↗";
     font-family: var(--font-monospace);
-    padding: 2px;
-    background-color: var(--code-background-color);
-    color: var(--code-color);
-    border-radius: 3px;
-}
-
-blockquote {
-    border-left: 1px solid var(--blockquote-color);
-    color: var(--code-color);
-    padding-left: 20px;
-    font-style: italic;
-}
-
-footer {
-    margin-top: 40px;
-    border-top: 3px dotted var(--main-color);
-    padding: 25px 0;
-    text-align: center;
-}
-
-footer > span:has(a[href="https://bearblog.dev"]) {
-    display: none;
 }
 
 .title:hover {
@@ -274,8 +140,65 @@ footer > span:has(a[href="https://bearblog.dev"]) {
     font-size: 1.5em;
 }
 
-.inline {
-    width: auto !important;
+/* =============================================================================
+   LAYOUT COMPONENTS
+   ============================================================================= */
+
+header {
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 3px dotted var(--main-color);
+}
+
+nav a {
+    margin-right: 8px;
+}
+
+main {
+    line-height: 1.6;
+}
+
+footer {
+    margin-top: var(--spacing-lg);
+    border-top: 3px dotted var(--main-color);
+    padding: 25px 0;
+    text-align: center;
+}
+
+footer > span:has(a[href="https://bearblog.dev"]) {
+    display: none;
+}
+
+/* =============================================================================
+   CONTENT ELEMENTS
+   ============================================================================= */
+
+hr {
+    border: 0;
+    border-top: 1px dashed var(--border-color);
+}
+
+img {
+    max-width: 100%;
+}
+
+blockquote {
+    border-left: 1px solid var(--blockquote-color);
+    color: var(--code-color);
+    padding-left: var(--spacing-md);
+    font-style: italic;
+}
+
+/* =============================================================================
+   CODE & SYNTAX HIGHLIGHTING
+   ============================================================================= */
+
+code {
+    font-family: var(--font-monospace);
+    padding: 2px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: var(--radius-sm);
 }
 
 .highlight,
@@ -283,13 +206,31 @@ footer > span:has(a[href="https://bearblog.dev"]) {
     padding: 1px 15px;
     background-color: var(--code-background-color);
     color: var(--code-color);
-    border-radius: 3px;
+    border-radius: var(--radius-sm);
     margin-block-start: 1em;
     margin-block-end: 1em;
     overflow-x: auto;
 }
 
-/* blog post list */
+/* =============================================================================
+   TABLES
+   ============================================================================= */
+
+table {
+    width: 100%;
+    border-spacing: 0;
+}
+
+th, td {
+    padding: 6px 13px;
+    border: 1px solid var(--border-color);
+    font-size: 1em;
+}
+
+/* =============================================================================
+   BLOG POST LISTINGS
+   ============================================================================= */
+
 ul.blog-posts {
     list-style-type: none;
     padding: unset;
@@ -297,7 +238,15 @@ ul.blog-posts {
 
 ul.blog-posts li {
     display: flex;
-    margin-bottom: 10px;
+    margin-bottom: var(--spacing-sm);
+}
+
+ul.blog-posts li span {
+    flex: 0 0 130px;
+}
+
+ul.blog-posts li a:visited {
+    color: var(--visited-color);
 }
 
 i time {
@@ -305,296 +254,377 @@ i time {
     opacity: 0.7;
 }
 
-ul.blog-posts li span {
-    flex: 0 0 130px;
+/* =============================================================================
+   UTILITY CLASSES
+   ============================================================================= */
+
+.inline {
+    width: auto !important;
 }
 
-
-ul.blog-posts li a:visited {
-    color: var(--visited-color);
+button {
+    margin: 0;
+    cursor: pointer;
 }
 
-table {
-    border-spacing: 0;
-}
+/* =============================================================================
+   FORM ELEMENTS
+   ============================================================================= */
 
-th,
-td {
-    padding: 6px 13px;
-    font-size: 1em;
-}
-
-/* external link marker */
-a[href^="http"]:where(:not([href*="knhash.in/"])):not(:has(img))::after {
-    content: "↗";
-    font-family: var(--font-monospace);
-}
-
-/* Form elements */
 input, button, textarea, select {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font: inherit;
-}
-legend {
-  margin: 20px 0;
-  font-weight: bold;
-}
-label {
-  display: block;
-  font-weight: bold;
-}
-input,
-textarea {
-  margin: 0 0 10px;
-  padding: 5px 10px;
-  color: var(--text-color);
-  background: var(--accent-color);
-  border: 2px solid var(--link-color);
-  border-radius: 5px;
-}
-input {
-  width: 55%;
-}
-textarea {
-  width: 95%;
-}
-input[type=button], input[type=submit], input[type=reset] {
-  margin: 0 0 20px;
-  padding: 7px;
-  font-family: var(--font-secondary);
-  font-weight: bold;
-  color: var(--background-color);
-  background: var(--link-color);
-  border-radius: 5px;
-  cursor: pointer;
-}
-::placeholder {
-  color: var(--text-color);
-  opacity: 0.7;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font: inherit;
 }
 
-/* Life in Weeks Styles */
+legend {
+    margin: var(--spacing-md) 0;
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input, textarea {
+    margin: 0 0 var(--spacing-sm);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    color: var(--text-color);
+    background: var(--code-background-color);
+    border: 2px solid var(--link-color);
+    border-radius: var(--radius-md);
+}
+
+input {
+    width: 55%;
+}
+
+textarea {
+    width: 95%;
+}
+
+input[type=button], 
+input[type=submit], 
+input[type=reset] {
+    margin: 0 0 var(--spacing-md);
+    padding: 7px;
+    font-family: var(--font-secondary);
+    font-weight: bold;
+    color: var(--background-color);
+    background: var(--link-color);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+}
+
+::placeholder {
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+/* =============================================================================
+   LIFE IN WEEKS - MAIN COMPONENT
+   ============================================================================= */
+
 .life-in-weeks {
-  margin: 20px 0;
+    margin: var(--spacing-md) 0;
 }
 
 .weeks-grid {
-  margin: 60px 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2px;
-  max-width: 100%;
-  align-items: flex-start;
+    margin: var(--spacing-xl) 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    max-width: 100%;
+    align-items: flex-start;
 }
 
-/* Removed wide-screen overrides for .weeks-grid to always fit its container */
-
+/* Week Square Base Styles */
 .week {
-  width: 16px;
-  height: 16px;
-  border: 1px solid var(--main-color);
-  background-color: var(--background-color);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  cursor: help;
-  font-family: var(--font-thin);
-  font-size: var(--font-scale);
-  line-height: 1.5;
-  padding: 2px 2px;
-  white-space: nowrap;
-  box-sizing: border-box;
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--main-color);
+    background-color: var(--background-color);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: default;
+    font-family: var(--font-secondary);
+    font-size: var(--font-scale);
+    line-height: 1.5;
+    padding: 2px;
+    white-space: nowrap;
+    box-sizing: border-box;
+    transition: all var(--transition-fast) ease;
 }
 
-/* Alternating decade bands */
+/* Week Square State Variations */
 .week.decade-0 {
-  background-color: var(--background-color);
+    background-color: var(--background-color);
 }
 
 .week.decade-1 {
-  background-color: var(--code-background-color);
+    background-color: var(--code-background-color);
 }
 
 .week.future {
-  background-color: transparent;
-  border-color: var(--blockquote-color);
-  opacity: 0.3;
+    background-color: transparent;
+    border-color: var(--blockquote-color);
+    opacity: 0.3;
 }
 
 .week.decade-1.future {
-  background-color: var(--code-background-color);
-  opacity: 0.2;
+    background-color: var(--code-background-color);
+    opacity: 0.2;
 }
 
 .week.has-events {
-  border-color: var(--visited-color);
-  background-color: var(--blockquote-color);
-  color: inherit;
-  font-size: var(--font-scale);
-  padding: 0;
+    border-color: var(--visited-color);
+    background-color: var(--blockquote-color);
+    color: inherit;
+    font-size: var(--font-scale);
+    padding: 0;
 }
 
 .week.has-events.future {
-  border-color: var(--blockquote-color);
-  opacity: 0.6;
-  color: var(--blockquote-color);
+    border-color: var(--blockquote-color);
+    opacity: 0.6;
+    color: var(--blockquote-color);
 }
 
+/* Current Week Animation */
 .week.current {
-  animation: pulse 2s ease-in-out infinite;
-  border-width: 2px;
-  border-color: var(--link-color);
-  box-shadow: 0 0 10px rgba(124, 64, 17, 0.3);
+    animation: pulse 2s ease-in-out infinite;
+    border-width: 2px;
+    border-color: var(--link-color);
+    box-shadow: 0 0 10px rgba(124, 64, 17, 0.3);
 }
 
 .week.current.has-events {
-  box-shadow: 0 0 10px rgba(124, 64, 17, 0.5);
+    box-shadow: 0 0 10px rgba(124, 64, 17, 0.5);
 }
 
 @keyframes pulse {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.1);
-    opacity: 0.7;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
+/* Dark Mode Week Adjustments */
 @media (prefers-color-scheme: dark) {
-  .week.current {
-    box-shadow: 0 0 10px rgba(229, 162, 84, 0.3);
-  }
-  
-  .week.current.has-events {
-    box-shadow: 0 0 10px rgba(229, 162, 84, 0.5);
-  }
+    .week.current {
+        box-shadow: 0 0 10px rgba(229, 162, 84, 0.3);
+    }
+    
+    .week.current.has-events {
+        box-shadow: 0 0 10px rgba(229, 162, 84, 0.5);
+    }
 }
 
+/* =============================================================================
+   LIFE IN WEEKS - INTERACTIVE COMPONENTS
+   ============================================================================= */
+
+/* Event Indicator */
 .event-indicator {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: var(--background-color);
-  font-size: 8px;
-  line-height: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--background-color);
+    font-size: 8px;
+    line-height: 1;
 }
 
+/* Events List */
 .events-list {
-  margin: 40px 0;
-  padding: 20px;
-  background-color: var(--code-background-color);
-  border-radius: 5px;
+    margin: var(--spacing-lg) 0;
+    padding: var(--spacing-md);
+    background-color: var(--code-background-color);
+    border-radius: var(--radius-md);
 }
 
 .events-list h3 {
-  margin-top: 0;
-  color: var(--heading-color);
-  border-bottom: 1px solid var(--main-color);
-  padding-bottom: 10px;
+    margin-top: 0;
+    color: var(--heading-color);
+    border-bottom: 1px solid var(--main-color);
+    padding-bottom: var(--spacing-sm);
 }
 
 .event-item {
-  margin: 10px 0;
-  padding: 8px 0;
-  border-bottom: 1px dotted var(--blockquote-color);
-  font-size: 0.9em;
-  line-height: 1.4;
+    margin: var(--spacing-sm) 0;
+    padding: 8px 0;
+    border-bottom: 1px dotted var(--blockquote-color);
+    font-size: 0.9em;
+    line-height: 1.4;
 }
 
 .event-item:last-child {
-  border-bottom: none;
+    border-bottom: none;
 }
 
 .event-year {
-  color: var(--main-color);
-  margin-right: 15px;
-  min-width: 50px;
-  display: inline-block;
+    color: var(--main-color);
+    margin-right: 15px;
+    min-width: 50px;
+    display: inline-block;
 }
 
 .event-name {
-  color: var(--heading-color);
-  margin-right: 10px;
+    color: var(--heading-color);
+    margin-right: var(--spacing-sm);
 }
 
 .event-desc {
-  color: var(--text-color);
-  font-style: italic;
-  display: block;
-  margin-top: 5px;
-  margin-left: 65px;
+    color: var(--text-color);
+    font-style: italic;
+    display: block;
+    margin-top: var(--spacing-xs);
+    margin-left: 65px;
 }
 
-/* Responsive adjustments */
-/* Responsive sizing to fit ~52 squares across screen width */
+/* =============================================================================
+   LIFE IN WEEKS - CAROUSEL COMPONENTS
+   ============================================================================= */
+
+/* Highlighted week number in carousel quote */
+.carousel-weeknum {
+    color: var(--link-color);
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* Pulse effect for carousel-selected week */
+.carousel-pulse {
+    animation: carousel-pulse 1.2s cubic-bezier(0.4,0,0.6,1) infinite;
+    border-width: 2px !important;
+    border-color: var(--link-color) !important;
+    box-shadow: 0 0 10px rgba(124, 64, 17, 0.5);
+    z-index: 2;
+}
+
+@keyframes carousel-pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.18);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Carousel arrow button styles */
+#life-carousel-up, 
+#life-carousel-down {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5em;
+    line-height: 1;
+    padding: 0.2em;
+    color: var(--main-color);
+    outline: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: color var(--transition-fast);
+}
+
+#life-carousel-up:focus, 
+#life-carousel-down:focus, 
+#life-carousel-up:active, 
+#life-carousel-down:active {
+    outline: none;
+    box-shadow: none;
+    background: none;
+    color: var(--main-color);
+}
+
+#life-carousel-up span, 
+#life-carousel-down span {
+    color: inherit;
+}
+
+/* =============================================================================
+   RESPONSIVE DESIGN
+   ============================================================================= */
+
+/* Large screens - optimize week grid sizing */
 @media (max-width: 1200px) {
-  .week {
-    width: calc((100vw - 40px - (51 * 2px)) / 52);
-    height: calc((100vw - 40px - (51 * 2px)) / 52);
-    font-size: calc(var(--font-scale) * 0.8);
-    padding: 0;
-    min-width: 8px;
-    min-height: 8px;
-  }
-  
-  .week.has-events {
-    font-size: calc(var(--font-scale) * 0.8);
-    padding: 0;
-  }
+    .week {
+        width: calc((100vw - 40px - (51 * 2px)) / 52);
+        height: calc((100vw - 40px - (51 * 2px)) / 52);
+        font-size: calc(var(--font-scale) * 0.8);
+        padding: 0;
+        min-width: 8px;
+        min-height: 8px;
+    }
+    
+    .week.has-events {
+        font-size: calc(var(--font-scale) * 0.8);
+        padding: 0;
+    }
 }
 
+/* Tablet screens */
 @media (max-width: 768px) {
-  .week {
-    width: calc((100vw - 40px - (51 * 1px)) / 52);
-    height: calc((100vw - 40px - (51 * 1px)) / 52);
-    font-size: calc(var(--font-scale) * 0.7);
-    padding: 0;
-    min-width: 8px;
-    min-height: 8px;
-  }
-  
-  .week.has-events {
-    font-size: calc(var(--font-scale) * 0.7);
-    padding: 0;
-  }
-  
-  .weeks-grid {
-    gap: 1px;
-  }
-  
-  .event-desc {
-    margin-left: 0;
-  }
+    .week {
+        width: calc((100vw - 40px - (51 * 1px)) / 52);
+        height: calc((100vw - 40px - (51 * 1px)) / 52);
+        font-size: calc(var(--font-scale) * 0.7);
+        padding: 0;
+        min-width: 8px;
+        min-height: 8px;
+    }
+    
+    .week.has-events {
+        font-size: calc(var(--font-scale) * 0.7);
+        padding: 0;
+    }
+    
+    .weeks-grid {
+        gap: 1px;
+    }
+    
+    .event-desc {
+        margin-left: 0;
+    }
 }
 
+/* Mobile screens */
 @media (max-width: 480px) {
-  .week {
-    width: calc((100vw - 40px - (51 * 1px)) / 52);
-    height: calc((100vw - 40px - (51 * 1px)) / 52);
-    font-size: calc(var(--font-scale) * 0.6);
-    padding: 0;
-    min-width: 8px;
-    min-height: 8px;
-  }
-  
-  .week.has-events {
-    font-size: calc(var(--font-scale) * 0.6);
-    padding: 0;
-  }
-  
-  .weeks-grid {
-    gap: 1px;
-  }
+    .week {
+        width: calc((100vw - 40px - (51 * 1px)) / 52);
+        height: calc((100vw - 40px - (51 * 1px)) / 52);
+        font-size: calc(var(--font-scale) * 0.6);
+        padding: 0;
+        min-width: 8px;
+        min-height: 8px;
+    }
+    
+    .week.has-events {
+        font-size: calc(var(--font-scale) * 0.6);
+        padding: 0;
+    }
+    
+    .weeks-grid {
+        gap: 1px;
+    }
 }
       
   

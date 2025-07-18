@@ -17,6 +17,8 @@ This is a port of it's theme to Jekyll, with some tweaks. So you can use GitHub 
 - Gallery view for your images
 - Code highlighting
 - **Life in Weeks visualization** - Interactive timeline of your life events
+- **IBM Plex Mono typography** - Consistent monospace font across all elements
+- **Coffee-themed color palette** - Warm, coffee-inspired colors with automatic dark mode
 
 ## Screenshots
 
@@ -56,6 +58,19 @@ And then execute:
 Or install it yourself as:
 
     $ gem install jekyll-bear-theme
+
+### Design Philosophy
+
+jekyllBear now features a **monospace-first design** with IBM Plex Mono typography, creating a technical yet warm aesthetic. The coffee-themed color palette provides visual comfort while maintaining excellent readability across light and dark modes.
+
+### Customization
+
+The theme's CSS is now highly modular and customizable:
+
+- **Typography**: Modify `--font-main`, `--font-secondary`, and `--font-monospace` variables
+- **Spacing**: Use the standardized spacing scale for consistent layouts
+- **Colors**: All theme colors are centralized in CSS custom properties
+- **Layout**: Responsive design with mobile-first approach
 
 ## Usage
 
@@ -120,17 +135,6 @@ There should be 3 kinds of blog posts in the posts folder, an example of each ty
 Use them as templates for your front matter.
 
 >To test your theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000`.
-
-
-## Recent Updates: Life in Weeks Interactive Carousel
-
-- The **Life in Weeks** page now features an interactive carousel blockquote above the grid, showing a key event from your life.
-- Up/down arrows let you cycle through events. The week number, event name, and description are shown, with the week number highlighted.
-- As you change the quote, the corresponding week in the grid pulses, visually connecting the event to its week.
-- The quote area has a fixed height and is vertically centered, so the grid never shifts as you browse events.
-- The grid is fully non-interactive (no tooltips, no pointer/question mark cursor), for a clean and minimal look.
-- The carousel arrows are styled to match the theme and do not show a highlight on click.
-- All code is lean and efficient: no extra network requests, no heavy JS, and all data is embedded at build time for instant loading.
 
 See `life.md`, `_layouts/life-in-weeks.html`, and `assets/life-carousel.js` for implementation details.
 
