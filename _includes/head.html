@@ -15,6 +15,19 @@
     {% if page.layout == 'life-in-weeks' %}
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/life-in-weeks.css">
     {% endif %}
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    // Send invite/recovery links to the CMS after login
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", function (user) {
+        if (!user) {
+          window.netlifyIdentity.on("login", function () {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
 </head>
 
 <body>
